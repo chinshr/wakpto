@@ -2,6 +2,9 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var button3 = {};	// @button
+	var button21 = {};	// @button
+	var button19 = {};	// @button
 	var button20 = {};	// @button
 	var button18 = {};	// @button
 	var button9 = {};	// @button
@@ -9,12 +12,68 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var button13 = {};	// @button
 	var button4 = {};	// @button
 	var combobox1 = {};	// @combobox
-	var button6 = {};	// @button
 	var documentEvent = {};	// @document
-	var button5 = {};	// @button
 // @endregion// @endlock
 
+function signIn() {
+	if (WAF.directory.loginByPassword(WAF.sources.loginObject.loginName, WAF.sources.loginObject.password)) {
+		WAF.sources.user.all();
+		WAF.sources.holiday.all();
+		//WAF.sources.user1.all();
+		WAF.sources.user1.query("accessLevel = 3");
+		
+		
+		if (WAF.directory.currentUserBelongsTo("Administrator")) {
+			//hide login stuff
+			$$("richText1").setValue("Signed in as : " + WAF.directory.currentUser().fullName);
+			$$("signInContainer").hide();
+			$$("signOutContainer").show();
+			$$("container1").show();
+			$("#container13").css("top", "-1px");
+			$$("container13").hide();
+			$$("textField11").setValue("");
+			$$("textField12").setValue("");
+		} else {
+			WAF.directory.logout();
+			$$("signInError").setValue("Only the Administrator can sign in to this application.");
+		} //(WAF.directory.currentUserBelongsTo("Administrator"))
+		
+	} else {
+		$$("signInError").setValue("Invalid login.");
+	}
+}
 // eventHandlers// @lock
+
+	button3.click = function button3_click (event)// @startlock
+	{// @endlock
+		//New
+		$$('textField2').focus(); //login field
+	};// @lock
+
+	button21.click = function button21_click (event)// @startlock
+	{// @endlock
+		//Sign In
+		signIn();
+	};// @lock
+
+	button19.click = function button19_click (event)// @startlock
+	{// @endlock
+		//Sign Out
+		if (WAF.directory.logout()) {
+			//hide logout stuff
+			$$("richText1").setValue("");
+			$$("signOutContainer").hide();
+			$$("signInContainer").show();
+			$$("container1").hide();
+			$("#container13").css("top", "80px");
+			$("#container13").css("left", "0px");
+			$$("container13").show();	
+
+			WAF.sources.user.query("ID < 0");
+			WAF.sources.user1.query("ID < 0");
+			WAF.sources.holiday.query("ID < 0");
+		}
+	};// @lock
 
 	//Choose Manager
 	button20.click = function button20_click (event)// @startlock
@@ -120,65 +179,37 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		$("#textField13").val(WAF.sources.user1.fullName);
 	};// @lock
 
-	button6.click = function button6_click (event)// @startlock
-	{// @endlock
-		if (WAF.directory.logout()) {
-			//hide logout stuff
-			//$("#richText1").css("top", "40px");
-			$("#richText1").hide();
-			
-			//$("#button6").css("top", "40px");
-			$("#button6").hide();
-			
-			//show login stuff
-			$("#textField11").show();
-			$("#textField12").show();
-			$("#label11").show();
-			$("#label12").show();
-			$("#button5").show();
-			
-			WAF.sources.user.query("ID < 0");
-			WAF.sources.user1.query("ID < 0");
-			WAF.sources.holiday.query("ID < 0");
-		}
-	};// @lock
-
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		$("#richText1").hide();
-		$("#button6").hide();
-	};// @lock
 
-	button5.click = function button5_click (event)// @startlock
-	{// @endlock
-		var loginName = $("#textField11").val();
-		var thePassword = $("#textField12").val();
-		
-		if (WAF.directory.loginByPassword(loginName, thePassword)) {
-			WAF.sources.user.all();
-			WAF.sources.holiday.all();
-			//WAF.sources.user1.all();
-			WAF.sources.user1.query("accessLevel = 3");
-			
-			//hide login stuff
-			$("#textField11").hide();
-			$("#textField12").hide();
-			$("#label11").hide();
-			$("#label12").hide();
-			$("#button5").hide();
-			
-			$("#richText1").html(WAF.directory.currentUser().fullName);
-			//$("#richText1").css("top", "35px");
-			$("#richText1").show();
-			
-			//$("#button6").css("top", "35px");
-			$("#button6").show();	
+		if (WAF.directory.currentUser() === null) {
+			$$("richText1").setValue("");
+			$$("container1").hide();
+			$$("signInContainer").show();
+			$$("signOutContainer").hide();
+			$("#container13").css("top", "80px");
+			$("#container13").css("left", "0px");
+			$$("container13").show();		
 		} else {
-			$("#errorDiv1").html("Invalid login.");
+			$$("richText1").setValue("Signed in as : " + WAF.directory.currentUser().fullName);
+			$$("container1").show();
+			$$("signInContainer").hide();
+			$$("signOutContainer").show();
+			$("#container13").css("top", "-1px");
+			$$("container13").hide();
 		}
+		
+		$('#textField11, #textField12').live('keyup', function (e) {
+	   		if ( e.keyCode == 13 ){
+	   			signIn();
+	    	}
+		});	
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("button3", "click", button3.click, "WAF");
+	WAF.addListener("button21", "click", button21.click, "WAF");
+	WAF.addListener("button19", "click", button19.click, "WAF");
 	WAF.addListener("button20", "click", button20.click, "WAF");
 	WAF.addListener("button18", "click", button18.click, "WAF");
 	WAF.addListener("button9", "click", button9.click, "WAF");
@@ -186,8 +217,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	WAF.addListener("button13", "click", button13.click, "WAF");
 	WAF.addListener("button4", "click", button4.click, "WAF");
 	WAF.addListener("combobox1", "change", combobox1.change, "WAF");
-	WAF.addListener("button6", "click", button6.click, "WAF");
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
-	WAF.addListener("button5", "click", button5.click, "WAF");
 // @endregion
 };// @endlock

@@ -7,6 +7,7 @@ guidedModel =// @startlock
 		{
 			onRemove:function()
 			{// @endlock
+				/**/
 				var err;
 				var sessionRef = currentSession(); // Get session.
 				var myCurrentUser = currentUser(); // Get the current user.
@@ -14,39 +15,51 @@ guidedModel =// @startlock
 				
 				//debugger;
 				if (sessionRef.belongsTo("Administrator")) {
-					err = { error : 5099, errorMessage: "The Administrator is not allowed to remove PTO Request Line Items."};
+					//err = { error : 5099, errorMessage: "The Administrator is not allowed to remove PTO Request Line Items."};
+					//return err;
 				
 				} else if (sessionRef.belongsTo("Manager") && (this.ptoRequest.requestor.login !== myCurrentUser.name)) {	
 					err = { error : 5095, errorMessage: "A Manager is only allowed to remove their own PTO Request Line Items."};
+					return err;
 				
-				} else if (sessionRef.belongsTo("Employee")) {
-					
-					
-					
-					if (this.compensation === "Floating Day") {
-						var sessionRef = currentSession(); // Get session.
-						var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
-						//update the user account and put back the Floating Day.
-						myUserV.floatingDays += 1;
-						myUserV.save();
-						sessionRef.unPromote(promoteToken); //put the session back to normal.
+				} else if ((sessionRef.belongsTo("Employee")) || (sessionRef.belongsTo("Manager"))) {
+	
+					//Can't remove last request line item.
+					var thePTO = this.ptoRequest;
+					if (thePTO.requestLineItemCollection.length === 1) {
+						err = { error : 5091, errorMessage: "You cannot remove the last PTO Request Line Item."};
+						return err;
 					}
 					
-					if (this.compensation === "Paid Time Off") {
-						var sessionRef = currentSession(); // Get session.
-						var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
-						//update the user account and put back the Floating Day.
-						myUserV.ptoHours += this.hoursRequested;
-						myUserV.save();
-						sessionRef.unPromote(promoteToken); //put the session back to normal.
+					if (this.ptoRequest.status === "pending") { //want to check the status of the PTO request here.
+						if (this.compensation === "Floating Day") {
+							var sessionRef = currentSession(); // Get session.
+							var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
+							//update the user account and put back the Floating Day.
+							myUserV.floatingDays += 1;
+							myUserV.save();
+							sessionRef.unPromote(promoteToken); //put the session back to normal.
+						}
+						
+						if (this.compensation === "Paid Time Off") {
+							var sessionRef = currentSession(); // Get session.
+							var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
+							//update the user account and put back the Floating Day.
+							myUserV.ptoHours += this.hoursRequested;
+							myUserV.save();
+							sessionRef.unPromote(promoteToken); //put the session back to normal.
+						}
+					} else {
+						err = { error : 5097, errorMessage: "You cannot remove PTO Request Line Items unless the PTO status is pending."};
+						return err;
 					}
 					
 					
 				} else {	
 					err = { error : 5090, errorMessage: "You must sign in to remove PTO Request Line Items."};
+					return err;
 				}
 				
-				return err;
 				
 			},// @startlock
 			onValidate:function()
@@ -59,66 +72,110 @@ guidedModel =// @startlock
 					
 				if (sessionRef.belongsTo("Administrator")) {
 					err = { error : 5099, errorMessage: "The Administrator is not allowed to update PTO Request Line Items."};
+					return err;
 				
 				} else if (sessionRef.belongsTo("Manager") && (this.ptoRequest.requestor.login !== myCurrentUser.name)) {	
 					err = { error : 5095, errorMessage: "A Manager is only allowed to update their own  PTO Request Line Items."};
+					return err;
 				
 				} else if (sessionRef.belongsTo("Employee")) {
 					
 					
 				} else {	
 					err = { error : 5090, errorMessage: "You must sign in to update PTO Request Line Items."};
+					return err;
 				}
 				
-				//User wants to update their PTO Request.
+				
+				
+				//User wants to update their PTO Request line item.
 				if (!this.isNew()) {
 					var theClass = this.getDataClass(); //get the dataclass of the entity to save
 					var theClassName = theClass.getName(); //get the dataclass name
 					var oldEntity = theClass(this.getKey()); //find the same entity on disk	
 					
-					//Did compensation method change?
-					//debugger;
+					//Can't edit compensation method or date.
+					//if (this.dateRequested !== oldEntity.dateRequested) {
+					DaysDiff = Math.floor((this.dateRequested.getTime() - oldEntity.dateRequested.getTime())/(1000*60*60*24));
+					if (DaysDiff !== 0) {
+						err = { error : 5080, errorMessage: "You cannot change the PTO Request Line Item date requested."};
+						return err;
+					}
+					
+					/*
+					//Let's not let them change the compensation method.
 					if (this.compensation !== oldEntity.compensation) {
-						if (this.compensation === "Floating Day") {
-							if (myUserV.floatingDays < 1) {
-								err = { error : 5070, errorMessage: "You do not have any Floating Days left in your bank."};
+						err = { error : 5071, errorMessage: "You cannot change the PTO Request Line Item compensation method."};
+						return err;
+					}
+					*/
+					
+					//Did compensation method change?
+					if (this.ptoRequest.status === "pending") {
+						if (this.compensation !== oldEntity.compensation) {
+						//Changed Compensation Method
+							if (this.compensation === "Floating Day") {
+								/**/
+								if (myUserV.floatingDays < 1) {
+									err = { error : 5070, errorMessage: "You do not have any Floating Days left in your bank."};
+									return err;
+								}
+								
+							} //(this.compensation === "Floating Day")
+							
+							if (this.compensation === "Paid Time Off") {
+								
 							}
-						}
-					}
-					
-					
-					if (this.hoursRequested !== oldEntity.hoursRequested) {
-						if (this.compensation === "Floating Day") {
-								err = { error : 5050, errorMessage: "You don't need to request hours for Floating Days."};
-						}
-					}
-					
-					if ((this.hoursRequested < 1) || (this.hoursRequested > 7)) {
-						err = { error : 5052, errorMessage: "You cannot request hours less than 1 or greater than 8."};
+						} else {
+						//Did not change compensation method
+							
+							if (this.compensation === "Floating Day") {
+								if (this.hoursRequested !== oldEntity.hoursRequested) {
+									err = { error : 5050, errorMessage: "You don't need to request hours for Floating Days."};
+									return err;
+								}
+							} //(this.compensation === "Floating Day")
+							
+							
+							if (this.compensation === "Paid Time Off") {
+								/**/
+								if ((this.hoursRequested < 1) || (this.hoursRequested > 7)) {
+									err = { error : 5052, errorMessage: "You cannot request hours less than 1 or greater than 8."};
+									return err;
+								} else {
+									//check if we have enough hours.
+									if ((this.hoursRequested > myUserV.ptoHours) && (this.hoursRequested > oldEntity.hoursRequested)){
+										err = { error : 5054, errorMessage: "You do not have enough hours in your bank for this request."};
+										return err;
+									}
+								}//((this.hoursRequested < 1) || (this.hoursRequested > 7))
+							} //(this.compensation === "Paid Time Off")
+							
+						} //(this.compensation !== oldEntity.compensation)
+						
+						
+						
 					} else {
-						//check if we have enough hours.
-						if ((this.hoursRequested > myUserV.ptoHours) && (this.hoursRequested > oldEntity.hoursRequested)){
-							err = { error : 5054, errorMessage: "You do not have enough hours in your bank for this request."};
-						}
+						err = { error : 5097, errorMessage: "You cannot update PTO Request Line Items unless the PTO status is pending."};
+						return err;
 					}
 				} //(!this.isNew())
 				
-				
-				return err;
+			
 			},// @startlock
 			onSave:function()
 			{// @endlock
 				if (!this.isNew()) {
-					var sessionRef = currentSession(); // Get session.
-					var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
 					
+					var sessionRef = currentSession(); // Get session.
+					var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.				
 					var theClass = this.getDataClass(); //get the dataclass of the entity to save
 					var theClassName = theClass.getName(); //get the dataclass name
 					var oldEntity = theClass(this.getKey()); //find the same entity on disk
-				
 					var myCurrentUser = currentUser(); // Get the current user
 					var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity.
 					
+					//debugger;
 					if (this.hoursRequested < oldEntity.hoursRequested) {
 						myUser.ptoHours += oldEntity.hoursRequested - this.hoursRequested;
 					}
@@ -132,26 +189,51 @@ guidedModel =// @startlock
 							//Return Floating Day
 							myUser.floatingDays += 1;
 						}
+						
+						if (this.compensation === "Floating Day") {
+							myUser.floatingDays -= 1;
+							myUser.ptoHours -= oldEntity.ptoHours;
+							this.hoursRequested = 0;
+						}
 					}
 					
 					myUser.save();
 					sessionRef.unPromote(promoteToken); //put the session back to normal.
 					
 					//return {error: 5000, errorMessage: "Just a test."};
-				}
+				} (!this.isNew()) 
 				
 			}// @startlock
 		}
 	},
 	PTO_Request :
 	{
+		entityMethods :
+		{// @endlock
+			getLineItemsRange:function(startDate, endDate)
+			{// @lock
+				//debugger;
+				// For the current PTO Request get all line items in date range.
+				//return this.requestLineItemCollection;
+				//return this.requestLineItemCollection.query("compensation = :1", "Floating Day");
+				return this.requestLineItemCollection.query("dateRequested >= :1 && dateRequested <= :2", startDate, endDate);
+			}// @startlock
+		},
+		methods :
+		{// @endlock
+			newPTORequest:function()
+			{// @lock
+				// create new PTO Request entity
+				return new ds.PTO_Request();
+			}// @startlock
+		},
 		events :
 		{
 			onRestrictingQuery:function()
 			{// @endlock
 				var result = ds.PTO_Request.createEntityCollection();
-					
-				if (currentUser().name === "Admin") {
+				/**/
+				if (currentUser().name === "admin") {
 					result = ds.PTO_Request.all();
 				
 				} else {
@@ -160,7 +242,7 @@ guidedModel =// @startlock
 					var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity.
 					if (myUser !== null) {
 						if (myUser.accessLevel < 4) {
-							result = ds.PTO_Request.query("requestor.myManager.login = :1", myCurrentUser.name);
+							result = ds.PTO_Request.query("requestor.myManager.login = :1 and status !== :2", myCurrentUser.name, "pending");
 							theManagerPTOs = ds.PTO_Request.query("requestor.login = :1", currentUser().name);
 							result = result.add(theManagerPTOs);
 							
@@ -170,17 +252,13 @@ guidedModel =// @startlock
 					}
 				}
 				
+				
+				
+				
 				return result;
 			},// @startlock
 			onSave:function()
 			{// @endlock
-				//debugger;
-				//var sessionRef = currentSession(); // Get session.
-				//var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
-				
-				//If there are any existing line items for this request delete them first.
-				//We need to add code to do this.
-				
 				var myCurrentUser = currentUser(); // Get the current user
 				var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity.
 				var the4DHolidays = ds.Holiday.all();
@@ -191,8 +269,19 @@ guidedModel =// @startlock
 				var hours;
 				
 				
+				/*
+				dateCompare = dates.compare(firstDayOff, currentDate);
+						if (dateCompare < 0) {
+							
+				+
+				*/
+				
+				vacationDateCompare = dates.compare(this.firstDayOff, this.lastDayOff);
+				
+				
 				if ((myUser !== null) && (this.isNew())) {
-					if (myLastDay != null) {
+					//if (myLastDay != null) {
+					if (vacationDateCompare === -1) {
 						while (myDayPointer <= myLastDay) { // Loop thru the requested days off.
 							theDayNumber = myDayPointer.getDay();
 						 	if ((theDayNumber > 0) && (theDayNumber < 6) && (!is4DHoliday(myDayPointer))){
@@ -208,7 +297,21 @@ guidedModel =// @startlock
 					} //(myLastDay != null)
 				}//(myUser !== null)				
 				
-				//sessionRef.unPromote(promoteToken); //put the session back to normal.
+				
+				/**/
+				if ((myUser !== null) && (!this.isNew())) {
+					if (this.status === "commit") {
+						var theEmailWorker = new SharedWorker("sharedWorkers/emailDaemon.js", "emailDaemon");
+						var thePort = theEmailWorker.port; // MessagePort to communicate with the email shared worker.
+						
+						thePort.postMessage({what: 'send email',
+								requestorID : this.requestor.ID,
+								firstDayOff: formatDate(this.firstDayOff),
+								lastDayOff: formatDate(this.lastDayOff)
+						});
+					}
+				}
+				
 			},// @startlock
 			onInit:function()
 			{// @endlock
@@ -238,9 +341,6 @@ guidedModel =// @startlock
 			},// @startlock
 			onValidate:function()
 			{// @endlock
-				//var sessionRef = currentSession(); // Get session.
-				//var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
-				
 				var err;
 				var theClass = this.getDataClass(); //get the dataclass of the entity to save
 				var theClassName = theClass.getName(); //get the dataclass name
@@ -255,29 +355,12 @@ guidedModel =// @startlock
 					
 					
 				} else if (sessionRef.belongsTo("Manager") && (this.requestor.login !== myCurrentUser.name)) {
-					//err = { error : 8888, errorMessage: "I am being a manager."};
-					//return err;
-						
-					/*
-					var myCurrentUser = currentUser(); // Get the current user.
-					var myUserV = ds.User.find("ID = :1", myCurrentUser.ID);
-					
-					//Is Manager looking at their own PTO request or an employee's PTO request?
-					if (this.requestor.login === myCurrentUser.name) {
-						//It's the managers PTO request.
-						err = { error : 9999, errorMessage: "This is your request."};
-						return err;
-						
-					} else {
-						//It is an employee's request.
-						err = { error : 9998, errorMessage: "This is your employee's request."};
-						return err;
-						
-					}
-					*/
+				
+				
+					//status
+					//Let's think about status June 29 2012
 					
 					
-					/**/
 					if (this.firstDayOff === null) {
 						err = { error : 4010, errorMessage: "You do not have permission to update the First Day Off field value."};
 						return err;	
@@ -320,8 +403,17 @@ guidedModel =// @startlock
 
 						
 				} else if (sessionRef.belongsTo("Employee")) {
-					//err = { error : 8889, errorMessage: "I am  a manager being an employee."};
-					//return err;	
+					//Does this entity belong to the employee that is signed in?
+					if (this.requestor.HA1Key !== myUserV.HA1Key) {
+						err = { error : 2001, errorMessage: "You cannot update another employee's PTO request."};
+						return err;
+					}
+					
+					if (!((this.status === "pending") || (this.status === "commit"))) {
+						err = { error : 2006, errorMessage: "Invalid status."};
+						return err;
+					}
+					
 					
 					if (this.firstDayOff === null) {
 						err = { error : 2002, errorMessage: "You must enter a First Day Off."};
@@ -352,12 +444,6 @@ guidedModel =// @startlock
 						}
 					}
 					
-					//if ((this.status !== null) && (oldEntity.status !== null)) {
-					//	if (this.status !== oldEntity.status) {
-					//		err = { error : 2007, errorMessage: "You do not have permission to change the status."};
-					//		return err;	
-					//	}
-					//}
 					
 					if (this.authorized) {
 							err = { error : 2010, errorMessage: "You do not have permission to authorize PTO requests."};
@@ -369,14 +455,23 @@ guidedModel =// @startlock
 					if (!this.isNew()) {
 					 	//This is an existing PTO rquest.
 					 	if (this.authorizationDate !== oldEntity.authorizationDate) {
-					 		err = { error : 2006, errorMessage: "You do not have permission to change the status."};
+					 		err = { error : 2006, errorMessage: "You do not have permission to change the authorization date."};
 							return err;	
 					 	}
 					 	
 					 	
 					 	if (this.status !== oldEntity.status) {
-							err = { error : 2007, errorMessage: "You do not have permission to change the status."};
-							return err;	
+					 		//check to see if it's ok for the employee to change the status
+					 		if (oldEntity.status !== "pending") {
+								err = { error : 2007, errorMessage: "You do not have permission to change the status."};
+								return err;	
+							} else { 
+								//current status is pending
+								if (this.status !== "commit") {
+									err = { error : 2007, errorMessage: "You do not have permission to change the status."};
+									return err;	
+								} 
+							}
 						}
 					
 					 	if (this.firstDayOff === null) {
@@ -413,67 +508,67 @@ guidedModel =// @startlock
 						
 					} //This is an existing request - end.
 					
-					
-					//Has the first day requested already past?
-					dateCompare = dates.compare(firstDayOff, currentDate);
-					if (dateCompare < 0) {
-						err = { error : 2064, errorMessage: "Your request is invalid. The requested dates have already passed." };
-						return err;	
-					}
-					
-					
-					if (lastDayOff !== null) {
-						//Has the last day requested already past?
-						dateCompare = dates.compare(lastDayOff, currentDate);
-						if ((dateCompare < 0)  & (err == null)) {
-							err = { error : 2072, errorMessage: "Your request is invalid. The requested dates have already past." };
-							return err;	
-						}
-						
-						//Is the last day requested before the first day requested?
-						dateCompare = dates.compare(lastDayOff, firstDayOff);
-						if ((dateCompare < 0) & (err == null)) {
-							err = { error : 2078, errorMessage: "Your request is invalid. The last day off is before the first day off." };
-							return err;	
-						}
-					}
-					
-					//Does the user have enough hours?
-					//Only check this for new requests
+					//Only for new requests
 					if (this.isNew()) {
-						if (lastDayOff != null) {
-							var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-							var daysRequested = daysOffRequested(firstDayOff, lastDayOff);
-						} else {
-							daysRequested = 1;
+						//Has the first day requested already past?
+						dateCompare = dates.compare(firstDayOff, currentDate);
+						if (dateCompare < 0) {
+							err = { error : 2064, errorMessage: "Your request is invalid. The requested dates have already passed." };
+							return err;	
 						}
-						var theNumberOfElapsedPayPeriods = elapsedPayPeriods(myUserV);
-						var currentPTOHoursV = myUserV.ptoHours + (theNumberOfElapsedPayPeriods * myUserV.ptoAccrualRate);
-						currentPTOHoursV = Math.floor(currentPTOHoursV);
-						var ptoDaysRemaining = Math.floor(currentPTOHoursV/8);
-						var floatingDays = myUserV.floatingDays;
-						var myTotalDays = ptoDaysRemaining + floatingDays;
-						if ((myTotalDays < daysRequested)  & (err == null)) { //floatingDays + ptoDaysRemaining	
-							if ((currentPTOHoursV > 0) && (myTotalDays === daysRequested - 1)) {
-								// no error
+					
+					
+						if (lastDayOff !== null) {
+							//Has the last day requested already past?
+							dateCompare = dates.compare(lastDayOff, currentDate);
+							if ((dateCompare < 0)  & (err == null)) {
+								err = { error : 2072, errorMessage: "Your request is invalid. The requested dates have already past." };
+								return err;	
+							}
+							
+							//Is the last day requested before the first day requested?
+							//dateCompare = dates.compare(lastDayOff, firstDayOff);
+							//if ((dateCompare < 0) & (err == null)) {
+							//	err = { error : 2078, errorMessage: "Your request is invalid. The last day off is before the first day off." };
+							//	return err;	
+							//}
+						}
+					
+						//Does the user have enough hours?
+						//Only check this for new requests
+						if (this.isNew()) {
+							if (lastDayOff != null) {
+								var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+								var daysRequested = daysOffRequested(firstDayOff, lastDayOff);
 							} else {
-								err = { error : 2088, errorMessage: "You have requested " + daysRequested + " days off. You do not have enough PTO/Floating Holidays for this request." };
+								daysRequested = 1;
+							}
+							var theNumberOfElapsedPayPeriods = elapsedPayPeriods(myUserV);
+							var currentPTOHoursV = myUserV.ptoHours + (theNumberOfElapsedPayPeriods * myUserV.ptoAccrualRate);
+							currentPTOHoursV = Math.floor(currentPTOHoursV);
+							var ptoDaysRemaining = Math.floor(currentPTOHoursV/8);
+							var floatingDays = myUserV.floatingDays;
+							var myTotalDays = ptoDaysRemaining + floatingDays;
+							if ((myTotalDays < daysRequested)  & (err == null)) { //floatingDays + ptoDaysRemaining	
+								if ((currentPTOHoursV > 0) && (myTotalDays === daysRequested - 1)) {
+									// no error
+								} else {
+									err = { error : 2088, errorMessage: "You have requested " + daysRequested + " days off. You do not have enough PTO/Floating Holidays for this request." };
+									return err;	
+								}
+							}
+						}
+					
+					
+					
+						//Duplicate request?
+						if (this.isNew()) {
+							if (duplicatePTORequest(this, myUserV)) {
+								err = { error : 2089, errorMessage: "This request conflicts with a previous request." };
 								return err;	
 							}
 						}
-					}
-					
-					
-					
-					//Duplicate request?
-					if (this.isNew()) {
-						if (duplicatePTORequest(this, myUserV)) {
-							err = { error : 2089, errorMessage: "This request conflicts with a previous request." };
-							return err;	
-						}
-					}
-							
-				
+					} //Only for new requests.
 						
 				} else {
 					//This session does not belong to any authorized group.
@@ -481,39 +576,42 @@ guidedModel =// @startlock
 					return err;	
 				}
 				
-				
-				
-				/*
-				if (!this.isNew()) {
-					//No one can update the Date Entered field.
-					if (this.dateEntered.toString() !== oldEntity.dateEntered.toString()) {
-							err = { error : 2015, errorMessage: "You do not have permission to update the Date Entered field."};
-							return err;	
-					}	
-					
-					
-					if (oldEntity.authorizationDate !== null) {
-						if  (this.authorizationDate.toString() !== oldEntity.authorizationDate.toString()) {
-							err = { error : 2015, errorMessage: "You do not have permission to update the Authorization Date field."};
-							return err;	
-						}	
-					} else {
-						if (this.authorizationDate !== null) {
-							err = { error : 2017, errorMessage: "You do not have permission to update the Authorization Date field."};
-							return err;	
-						}
-					}
-				}
-				*/
-				//return err;
-
-				
-								
 			}// @startlock
 		}
 	},
 	User :
 	{
+		methods :
+		{// @endlock
+			changePassword:function(passwordData)
+			{// @lock
+				var sessionRef = currentSession(); // Get session.
+				var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
+				//Find the User entity for the current user.
+				var myCurrentUser = currentUser(); // we get the user of the current session.
+				var myUser = ds.User.find("ID = :1", myCurrentUser.ID);
+    			
+				if ((myCurrentUser !== null) && (myUser !== null)) {//if a user is logged in.
+					
+					if (myUser.validatePassword(passwordData.oldPassword)) {
+						if (passwordData.newPassword === passwordData.newPasswordAgain) {
+							myUser.password = passwordData.newPassword;
+							myUser.save();
+							return {message: "Your password has been changed."};
+						} else {
+							return {message: "You did not match the new password."};
+						}
+					} else {
+						return {message: "You did not enter the correct password."};
+					}
+					
+				} else {
+					return {message: "Could not load your user account on the server. You password was not changed."}
+				}
+				
+				sessionRef.unPromote(promoteToken); //put the session back to normal.	
+			}// @startlock
+		},
 		events :
 		{
 			onRestrictingQuery:function()
@@ -540,12 +638,10 @@ guidedModel =// @startlock
 			{// @endlock
 				// Add your code here
 				//Reset the seed values.
-//				var theNumberOfElapsedPayPeriods = elapsedPayPeriods(this);
-//				var currentPTOHours = this.ptoHours + (theNumberOfElapsedPayPeriods * this.ptoAccrualRate);
-//				this.ptoHours = currentPTOHours;
-//				this.ptoSeedDate = new Date();
-				
-				//end
+				//var theNumberOfElapsedPayPeriods = elapsedPayPeriods(this);
+				//var currentPTOHours = this.ptoHours + (theNumberOfElapsedPayPeriods * this.ptoAccrualRate);				
+				//this.ptoHours = currentPTOHours;
+				//this.ptoSeedDate = new Date();
 			}// @startlock
 		},
 		entityMethods :
