@@ -210,6 +210,33 @@ guidedModel =// @startlock
 	{
 		entityMethods :
 		{// @endlock
+			getStatusList:function()
+			{// @lock
+				var statusArray = [];
+				
+				if (currentSession().belongsTo("Payroll") || currentSession().belongsTo("Manager") || currentSession().belongsTo("Administrator")) {
+					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "commit"}, {statusName: "approved"}, {statusName: "returned"}];
+				} else if (currentSession().belongsTo("Employee")) {
+					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "commit"}];
+					if ((this.status !== "pending") && (this.status !== "commit")) {
+						var myNewStatusObj = {statusName: ""};
+						myNewStatusObj.statusName = this.status;
+						statusArray.push(myNewStatusObj);
+					}
+				}
+				
+				return statusArray;
+				
+				
+				//var statusArray = [];
+				//statusArray = [{statusName: "VV"}, {statusName: "pending"}, {statusName: "commit"}];
+				//return {dave: "robbins"};
+				//return statusArray;
+				//return this.status;
+				//var myNewStatusObj = {statusName: ""};
+				//myNewStatusObj.statusName = this.status;
+				//return myNewStatusObj;
+			},// @lock
 			getLineItemsRange:function(startDate, endDate)
 			{// @lock
 				//debugger;
@@ -221,6 +248,20 @@ guidedModel =// @startlock
 		},
 		methods :
 		{// @endlock
+			getListOfStatus:function(currentStatus)
+			{// @lock
+				var statusArray = [];
+				
+				if (currentSession().belongsTo("Payroll") || currentSession().belongsTo("Manager") || currentSession().belongsTo("Administrator")) {
+					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "commit"}, {statusName: "approved"}, {statusName: "returned"}];
+				} else if  (currentSession().belongsTo("Employee")) {
+					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "commit"}];
+				}
+				
+				//return [{statusName: ""}, {statusName: "pending"}, {statusName: "commmit"}, {statusName: "approved"}];
+				
+				return statusArray;
+			},// @lock
 			newPTORequest:function()
 			{// @lock
 				// create new PTO Request entity
@@ -649,6 +690,7 @@ guidedModel =// @startlock
 			validatePassword:function(password) //only use the password.
 			{// @lock
 				var ha1 = directory.computeHA1(this.ID, password);
+				console.log("Validate Password ha1: " + ha1 + " this.HA1Key: " + this.HA1Key);
 				return (ha1 === this.HA1Key); //true if validated, false otherwise.
 			}// @startlock
 		},

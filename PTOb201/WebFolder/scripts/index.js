@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var pTO_RequestEvent = {};	// @dataSource
 	var button1 = {};	// @button
 	var button24 = {};	// @button
 	var button23 = {};	// @button
@@ -102,12 +103,8 @@ function updateUserAccountDisplay() {
 function enableInput() {
 	$("#textField3").removeAttr("disabled"); //First Day Off
 	$("#textField4").removeAttr("disabled"); //Last Day Off
-	
 	$("#textField15").removeAttr("disabled"); //line item hours
-	//$("#combobox1").removeAttr("disabled"); //line item hours
-	
-	//$("#button6").removeAttr("disabled"); //line item remove
-	//$("#button7").removeAttr("disabled"); //line item save
+	$$("combobox2").enable(); //status
 	$$("button6").enable();
 	$$("button7").enable();
 }
@@ -115,6 +112,7 @@ function enableInput() {
 function disableInput() { 
 	//$('#container5').html('');
 	//$('#container6').html('');
+	/**/
 	if (WAF.directory.currentUserBelongsTo("Employee")) {
 			$("#textField3").attr("disabled", "disabled"); //First Day Off
 			$("#textField4").attr("disabled", "disabled"); //Last Day Off
@@ -132,9 +130,11 @@ function disableInput() {
 				$$("button7").enable();
 				$$("combobox1").enable();
 				$("#textField15").removeAttr("disabled"); //line item hours
+				$$("combobox2").enable(); //status
 			} //(WAF.sources.pTO_Request.status !== "pending") 
 		//}
 	} //(WAF.directory.currentUserBelongsTo("Employee"))
+	
 }
 
 function getNextWorkDay(textFieldIDSelector) {
@@ -256,15 +256,29 @@ function getNextWorkDay(textFieldIDSelector) {
 }
 
 function signIn() {
-	//WAF.sources.statusArray.sync();
 	$("#errorDiv1").html("");
 	if (WAF.directory.loginByPassword(WAF.sources.loginObject.loginName, WAF.sources.loginObject.password)) {
+		
+		
+//		statusArray = [];
+//		statusArray = WAF.sources.pTO_Request.getStatusList();
+//		WAF.sources.statusArray.sync();
+		
+		//statusArray = [];
+		//statusArray.push({statusName: ''});
+		//statusArray.push({statusName: 'pending'});
+		//statusArray.push({statusName: 'commit'});
+			
+		//statusArray = ds.PTO_Request.getListOfStatus();
+		//WAF.sources.statusArray.sync();
+		
+		/**/
 		statusArray = [];
 		if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
 			(WAF.directory.currentUserBelongsTo("Manager")) ||
 			(WAF.directory.currentUserBelongsTo("Administrator"))) {
 			statusArray.push({statusName: ''});
-			//statusArray.push({statusName: 'pending'});
+			statusArray.push({statusName: 'pending'});
 			statusArray.push({statusName: 'commit'});
 			statusArray.push({statusName: 'approved'});
 			statusArray.push({statusName: 'rejected'});
@@ -277,7 +291,18 @@ function signIn() {
 		}
 		WAF.sources.statusArray.sync();
 		
-		WAF.sources.pTO_Request.all();
+		/**/
+		WAF.sources.pTO_Request.all({
+			onSuccess: function(event) {
+				//statusArray = [];
+				//var myObject = WAF.sources.pTO_Request.getStatusList();
+				//console.log(myObject);
+				//WAF.sources.statusArray.sync();
+			}
+		});
+		
+		
+		
 		$$("richText2").setValue("Signed in as : " + WAF.directory.currentUser().fullName);
 		$$("signInContainer").hide();
 		$$("signOutContainer").show();
@@ -303,6 +328,8 @@ function signIn() {
 		$$("textField2").setValue("");
 		
 		disableInput();
+		
+		
 
 	} else {
 		$$("signInError").setValue("Invalid login.");
@@ -312,6 +339,20 @@ function signIn() {
 
 
 // eventHandlers// @lock
+
+	pTO_RequestEvent.onCurrentElementChange = function pTO_RequestEvent_onCurrentElementChange (event)// @startlock
+	{// @endlock
+		
+		/*
+		var currentStatusArray = WAF.sources.pTO_Request.getStatusList();
+		statusArray = currentStatusArray;
+		WAF.sources.statusArray.sync();
+		console.log(WAF.sources.pTO_Request.status);
+		*/
+		
+		//statusArray.push({statusName: 'approved'});
+		//WAF.sources.statusArray.sync();
+	};// @lock
 
 	button1.click = function button1_click (event)// @startlock
 	{// @endlock
@@ -486,8 +527,26 @@ function signIn() {
 
 	dataGrid1.onRowClick = function dataGrid1_onRowClick (event)// @startlock
 	{// @endlock
+		//statusArray = [];
+		//var currentStatusArray = WAF.sources.pTO_Request.getStatusList();
+		//statusArray = currentStatusArray;
+		//statusArray = [{statusName: "pending"}, {statusName: "commit"}, {statusName: "approved"}];
+		//WAF.sources.statusArray.sync();
+		/*
+		statusArray = [];
+		statusArray.push({statusName: 'pending'});
+		statusArray.push({statusName: 'commit'});
+		statusArray.push({statusName: 'approved'});
+		WAF.sources.statusArray.sync();
+		*/
+		
+		statusArray.push({statusName: 'approved'});
+		WAF.sources.statusArray.sync();
+		
 		disableInput();
 		$("#errorDiv1").html('');
+		
+		
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
@@ -552,6 +611,7 @@ function signIn() {
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("pTO_Request", "onCurrentElementChange", pTO_RequestEvent.onCurrentElementChange, "WAF");
 	WAF.addListener("button1", "click", button1.click, "WAF");
 	WAF.addListener("button24", "click", button24.click, "WAF");
 	WAF.addListener("button23", "click", button23.click, "WAF");
