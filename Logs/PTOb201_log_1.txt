@@ -3452,3 +3452,681 @@
 2012-08-13 17:21:46 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
 2012-08-13 17:21:46 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
 2012-08-13 17:21:46 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-13 17:27:01 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-13 17:27:01 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-13 17:27:02 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1050 ms)
+2012-08-13 17:27:02 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-13 17:27:04 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2051 ms)
+2012-08-13 17:27:04 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3102 ms)
+2012-08-13 17:27:04 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-13 17:27:04 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-13 17:27:04 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the database
+2012-08-13 17:27:04 [com.wakanda-software.PTOb201.PTOb201] INFO - Database closed (duration: 407 ms)
+2012-08-13 17:27:04 [com.wakanda-software.PTOb201.PTOb201] INFO - Project closed (duration: 409 ms)
+2012-08-13 17:27:04 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the project
+2012-08-13 17:27:04 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the database
+2012-08-13 17:27:05 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database closed (duration: 405 ms)
+2012-08-13 17:27:05 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project closed (duration: 407 ms)
+2012-08-13 17:27:05 [com.wakanda-software.PTOb201] INFO - Solution closed (duration: 1222 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 14 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 27 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 49 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 5 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 8 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 99 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 28 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 68 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 28 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 62 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 7 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 5 ms)
+2012-08-13 17:27:40 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 144 ms)
+2012-08-13 17:52:17 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-13 17:52:17 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-13 17:52:18 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1048 ms)
+2012-08-13 17:52:18 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-13 17:52:20 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2051 ms)
+2012-08-13 17:52:20 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3099 ms)
+2012-08-13 17:52:20 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-13 17:52:20 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-13 17:52:20 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the database
+2012-08-13 17:52:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Database closed (duration: 407 ms)
+2012-08-13 17:52:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Project closed (duration: 407 ms)
+2012-08-13 17:52:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the project
+2012-08-13 17:52:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the database
+2012-08-13 17:52:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database closed (duration: 405 ms)
+2012-08-13 17:52:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project closed (duration: 407 ms)
+2012-08-13 17:52:22 [com.wakanda-software.PTOb201] INFO - Solution closed (duration: 1222 ms)
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 385 ms)
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 59 ms)
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 150 ms)
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 28 ms)
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 42 ms)
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 717 ms)
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-14 07:14:28 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 90 ms)
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 349 ms)
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 73 ms)
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 182 ms)
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 99 ms)
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 35 ms)
+2012-08-14 07:14:29 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 668 ms)
+2012-08-14 07:14:40 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-14 07:14:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-14 07:14:41 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1182 ms)
+2012-08-14 07:14:41 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-14 07:14:43 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2153 ms)
+2012-08-14 07:14:43 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3336 ms)
+2012-08-14 07:14:43 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-14 07:14:43 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-14 07:14:43 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the database
+2012-08-14 07:14:44 [com.wakanda-software.PTOb201.PTOb201] INFO - Database closed (duration: 408 ms)
+2012-08-14 07:14:44 [com.wakanda-software.PTOb201.PTOb201] INFO - Project closed (duration: 408 ms)
+2012-08-14 07:14:44 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the project
+2012-08-14 07:14:44 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the database
+2012-08-14 07:14:44 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database closed (duration: 405 ms)
+2012-08-14 07:14:44 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project closed (duration: 428 ms)
+2012-08-14 07:14:45 [com.wakanda-software.PTOb201] INFO - Solution closed (duration: 1246 ms)
+2012-08-14 07:26:11 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-14 07:26:11 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-14 07:26:11 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 494 ms)
+2012-08-14 07:26:11 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 47 ms)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 124 ms)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 12 ms)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 18 ms)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 735 ms)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 121 ms)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 610 ms)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 22 ms)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 56 ms)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 07:26:12 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 07:26:13 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 113 ms)
+2012-08-14 07:26:13 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-14 07:26:13 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 78 ms)
+2012-08-14 07:26:13 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 859 ms)
+2012-08-14 07:31:40 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:31:40 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:31:40 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:31:40 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:33:32 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:33:32 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:33:32 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:33:32 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:35:13 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:35:13 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:35:13 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:35:13 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:41:08 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:41:08 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:41:08 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:41:08 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:41:48 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bmartin Password: martin"]}, HTTP connection handler
+2012-08-14 07:41:48 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bmartin Password: martin"]}, HTTP connection handler
+2012-08-14 07:41:48 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 30cdcae7e18a341056508b1d92ac2751 this.HA1Key: 30cdcae7e18a341056508b1d92ac2751"]}, HTTP connection handler
+2012-08-14 07:41:48 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 30cdcae7e18a341056508b1d92ac2751 this.HA1Key: 30cdcae7e18a341056508b1d92ac2751"]}, HTTP connection handler
+2012-08-14 07:42:38 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bmartin Password: martin"]}, HTTP connection handler
+2012-08-14 07:42:38 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bmartin Password: martin"]}, HTTP connection handler
+2012-08-14 07:42:38 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 30cdcae7e18a341056508b1d92ac2751 this.HA1Key: 30cdcae7e18a341056508b1d92ac2751"]}, HTTP connection handler
+2012-08-14 07:42:38 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 30cdcae7e18a341056508b1d92ac2751 this.HA1Key: 30cdcae7e18a341056508b1d92ac2751"]}, HTTP connection handler
+2012-08-14 07:45:32 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:45:32 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:45:32 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:45:32 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:46:05 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:46:05 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:46:05 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:46:05 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:47:45 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:47:45 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:47:45 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:47:45 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:49:25 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:49:25 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:49:25 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:49:25 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:51:46 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:51:46 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 07:51:46 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:51:46 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 07:52:36 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bmartin Password: martin"]}, HTTP connection handler
+2012-08-14 07:52:36 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bmartin Password: martin"]}, HTTP connection handler
+2012-08-14 07:52:36 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 30cdcae7e18a341056508b1d92ac2751 this.HA1Key: 30cdcae7e18a341056508b1d92ac2751"]}, HTTP connection handler
+2012-08-14 07:52:36 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 30cdcae7e18a341056508b1d92ac2751 this.HA1Key: 30cdcae7e18a341056508b1d92ac2751"]}, HTTP connection handler
+2012-08-14 07:53:07 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-14 07:53:07 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-14 07:53:08 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1046 ms)
+2012-08-14 07:53:08 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-14 07:53:10 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2044 ms)
+2012-08-14 07:53:10 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3091 ms)
+2012-08-14 07:53:10 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-14 07:53:10 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-14 07:53:10 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the database
+2012-08-14 07:53:11 [com.wakanda-software.PTOb201.PTOb201] INFO - Database closed (duration: 406 ms)
+2012-08-14 07:53:11 [com.wakanda-software.PTOb201.PTOb201] INFO - Project closed (duration: 409 ms)
+2012-08-14 07:53:11 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the project
+2012-08-14 07:53:11 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the database
+2012-08-14 07:53:11 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database closed (duration: 405 ms)
+2012-08-14 07:53:11 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project closed (duration: 428 ms)
+2012-08-14 07:53:12 [com.wakanda-software.PTOb201] INFO - Solution closed (duration: 1245 ms)
+2012-08-14 08:00:31 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-14 08:00:31 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 71 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 300 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 381 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 222 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 226 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 705 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 22 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 66 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 22 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 55 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 7 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 5 ms)
+2012-08-14 08:00:32 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 135 ms)
+2012-08-14 08:01:06 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 08:01:06 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 08:02:32 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:02:32 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:02:32 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:02:32 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:02:49 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:02:49 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:02:49 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:02:49 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:03:15 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 08:03:15 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 08:03:49 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:03:49 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:03:49 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:03:49 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:14:06 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:14:06 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:14:06 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:14:06 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:14:39 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:14:39 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:14:39 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:14:39 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:14:56 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:14:56 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:14:56 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:14:56 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:48:10 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:48:10 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:48:10 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:48:10 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:48:48 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:48:48 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:48:48 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:48:48 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:49:41 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:49:41 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:49:41 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:49:41 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:50:10 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:50:10 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:50:10 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:50:10 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:50:20 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:50:20 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:50:20 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:50:20 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:53:01 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:53:01 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 08:53:01 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:53:01 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 08:53:14 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:53:14 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:53:14 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:53:14 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:56:35 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:56:35 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 08:56:35 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 08:56:35 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:01:15 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 09:01:15 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 09:01:15 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 09:01:15 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 09:01:26 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:01:26 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:01:26 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:01:26 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:01:52 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:01:52 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:01:52 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:01:52 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:03:37 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-14 09:03:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-14 09:03:38 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1048 ms)
+2012-08-14 09:03:38 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-14 09:03:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2052 ms)
+2012-08-14 09:03:40 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3101 ms)
+2012-08-14 09:03:40 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-14 09:03:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-14 09:03:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the database
+2012-08-14 09:03:41 [com.wakanda-software.PTOb201.PTOb201] INFO - Database closed (duration: 407 ms)
+2012-08-14 09:03:41 [com.wakanda-software.PTOb201.PTOb201] INFO - Project closed (duration: 410 ms)
+2012-08-14 09:03:41 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the project
+2012-08-14 09:03:41 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the database
+2012-08-14 09:03:41 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database closed (duration: 406 ms)
+2012-08-14 09:03:41 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project closed (duration: 408 ms)
+2012-08-14 09:03:41 [com.wakanda-software.PTOb201] INFO - Solution closed (duration: 1226 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 74 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 9 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 19 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 4 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 7 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 128 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 21 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 59 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 21 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 52 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 7 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 5 ms)
+2012-08-14 09:13:12 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 124 ms)
+2012-08-14 09:19:31 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 09:19:31 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 09:19:31 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 09:19:31 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 09:19:40 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 09:19:40 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 09:20:48 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 09:20:48 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 09:20:48 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 09:20:48 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 09:21:00 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:21:00 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:21:00 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:21:00 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:22:23 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:22:23 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:22:23 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:22:23 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:30:17 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:30:17 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:30:17 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:30:17 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:30:54 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:30:54 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:30:54 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:30:54 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:31:19 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 09:31:19 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: bgreen Password: green"]}, HTTP connection handler
+2012-08-14 09:31:19 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 09:31:19 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: d4bd746c1ac1367db5abb52625a17ef6 this.HA1Key: d4bd746c1ac1367db5abb52625a17ef6"]}, HTTP connection handler
+2012-08-14 09:31:25 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:31:25 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:31:25 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:31:25 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:31:54 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:31:54 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:31:54 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:31:54 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:33:43 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:33:43 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:33:43 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:33:43 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:43:40 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:43:40 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 09:43:40 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 09:43:40 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:07:39 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:07:39 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:07:39 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:07:39 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:08:52 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:08:52 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:08:52 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:08:52 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:10:35 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:10:35 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:10:35 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:10:35 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:13:00 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:13:00 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:13:00 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:13:00 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:17:59 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:17:59 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:17:59 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:17:59 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:21:15 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:21:15 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:21:15 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:21:15 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:22:49 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:22:49 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:22:49 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:22:49 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:26:54 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:26:54 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:26:54 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:26:54 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:27:13 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 10:27:13 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 10:27:13 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 10:27:13 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 10:27:43 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:27:43 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:27:43 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:27:43 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:33:57 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:33:57 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:33:57 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:33:57 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:34:20 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:34:20 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:34:20 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:34:20 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:39:15 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 10:39:15 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 10:39:15 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 10:39:15 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 10:39:43 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-14 10:39:43 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-14 10:39:44 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1046 ms)
+2012-08-14 10:39:44 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-14 10:39:46 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2054 ms)
+2012-08-14 10:39:46 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3101 ms)
+2012-08-14 10:39:46 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-14 10:39:46 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-14 10:39:46 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the database
+2012-08-14 10:39:47 [com.wakanda-software.PTOb201.PTOb201] INFO - Database closed (duration: 407 ms)
+2012-08-14 10:39:47 [com.wakanda-software.PTOb201.PTOb201] INFO - Project closed (duration: 410 ms)
+2012-08-14 10:39:47 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the project
+2012-08-14 10:39:47 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the database
+2012-08-14 10:39:47 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database closed (duration: 405 ms)
+2012-08-14 10:39:47 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project closed (duration: 407 ms)
+2012-08-14 10:39:48 [com.wakanda-software.PTOb201] INFO - Solution closed (duration: 1225 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 45 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 10 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 22 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 4 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 7 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 102 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 23 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 66 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 24 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 59 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 7 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 5 ms)
+2012-08-14 10:43:48 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 139 ms)
+2012-08-14 10:48:22 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:48:22 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:48:22 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:48:22 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:52:09 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 10:52:09 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 10:52:09 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 10:52:09 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 10:59:17 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:59:17 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 10:59:17 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 10:59:17 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:00:17 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:00:17 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:00:17 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:00:17 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:03:17 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:03:17 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:03:17 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:03:17 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:04:29 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 11:04:29 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 11:04:29 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 11:04:29 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 11:14:00 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 11:14:00 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 11:15:44 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 11:15:44 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 11:15:44 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 11:15:44 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 11:15:53 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 11:15:53 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 11:15:53 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 11:15:53 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 11:16:09 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:16:09 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:16:09 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:16:09 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:18:14 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 11:18:14 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 11:18:45 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 11:18:45 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 11:18:45 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 11:18:45 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 11:20:35 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:20:35 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:20:35 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:20:35 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:40:28 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-14 11:40:28 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-14 11:40:29 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1050 ms)
+2012-08-14 11:40:29 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-14 11:40:31 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2050 ms)
+2012-08-14 11:40:31 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3101 ms)
+2012-08-14 11:40:31 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-14 11:40:31 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-14 11:40:31 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the database
+2012-08-14 11:40:31 [com.wakanda-software.PTOb201.PTOb201] INFO - Database closed (duration: 407 ms)
+2012-08-14 11:40:31 [com.wakanda-software.PTOb201.PTOb201] INFO - Project closed (duration: 409 ms)
+2012-08-14 11:40:31 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the project
+2012-08-14 11:40:31 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Closing the database
+2012-08-14 11:40:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database closed (duration: 405 ms)
+2012-08-14 11:40:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project closed (duration: 407 ms)
+2012-08-14 11:40:32 [com.wakanda-software.PTOb201] INFO - Solution closed (duration: 1225 ms)
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 72 ms)
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 10 ms)
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 19 ms)
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 4 ms)
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 7 ms)
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 126 ms)
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-14 11:42:39 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 27 ms)
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 67 ms)
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 21 ms)
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 53 ms)
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 7 ms)
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 6 ms)
+2012-08-14 11:42:40 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 135 ms)
+2012-08-14 11:44:54 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 11:44:54 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 11:44:54 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 11:44:54 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 11:47:27 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:47:27 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: mgerin Password: gerin"]}, HTTP connection handler
+2012-08-14 11:47:27 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:47:27 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 103e3c05dc588d1788d51109efe15643 this.HA1Key: 103e3c05dc588d1788d51109efe15643"]}, HTTP connection handler
+2012-08-14 11:48:05 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 11:48:05 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 11:50:33 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 11:50:33 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}, HTTP connection handler
+2012-08-14 11:51:26 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 11:51:26 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: prose Password: rose"]}, HTTP connection handler
+2012-08-14 11:51:26 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 11:51:26 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: cd6d2f8eee514f5bc958fe42b9092b84 this.HA1Key: cd6d2f8eee514f5bc958fe42b9092b84"]}, HTTP connection handler
+2012-08-14 11:57:57 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-14 11:57:57 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-14 11:57:58 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1048 ms)
+2012-08-14 11:57:58 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-14 11:58:00 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2052 ms)
+2012-08-14 11:58:00 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3100 ms)
+2012-08-14 11:58:00 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-14 11:58:00 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-14 13:07:08 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-14 13:07:08 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-14 13:07:08 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 65 ms)
+2012-08-14 13:07:08 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-14 13:07:08 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-14 13:07:08 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 9 ms)
+2012-08-14 13:07:08 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 19 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 4 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 7 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 118 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 21 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 60 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 22 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 53 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 7 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 5 ms)
+2012-08-14 13:07:09 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 127 ms)
+2012-08-14 13:07:32 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 13:07:32 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 13:07:32 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 13:07:32 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 13:10:00 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-14 13:10:00 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-14 13:10:01 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1051 ms)
+2012-08-14 13:10:01 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-14 13:10:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2046 ms)
+2012-08-14 13:10:03 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3098 ms)
+2012-08-14 13:10:03 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-14 13:10:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 71 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 9 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 19 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 4 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 7 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 124 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 21 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 63 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 26 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 58 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: admin Password: admin"]}
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 8 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 9 ms)
+2012-08-14 13:11:03 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 139 ms)
+2012-08-14 13:11:27 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 13:11:27 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["User Name: dlavato Password: lavato"]}, HTTP connection handler
+2012-08-14 13:11:27 [com.wakanda-software.PTOb201.PTOb201] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 13:11:27 [com.wakanda-software.PTOb201.PTOb201.console] INFO - {"data":["Validate Password ha1: 764138480947b9e85429e7e3bf3e8f3b this.HA1Key: 764138480947b9e85429e7e3bf3e8f3b"]}, HTTP connection handler
+2012-08-14 13:12:37 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-14 13:12:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-14 13:12:38 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1045 ms)
+2012-08-14 13:12:38 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-14 13:12:40 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2050 ms)
+2012-08-14 13:12:40 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3096 ms)
+2012-08-14 13:12:40 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-14 13:12:40 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project

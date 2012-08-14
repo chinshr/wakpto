@@ -113,17 +113,41 @@ function disableInput() {
 	//$('#container5').html('');
 	//$('#container6').html('');
 	/**/
-	if (WAF.directory.currentUserBelongsTo("Employee")) {
+	if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
+		(WAF.directory.currentUserBelongsTo("Manager")) ||
+		(WAF.directory.currentUserBelongsTo("Administrator"))) {
+		
+		currentPTOUserName = WAF.sources.pTO_Request.getAttribute("requestor.fullName").getValue();
+		
+		if (WAF.directory.currentUser().fullName !== currentPTOUserName) {
+		//Manager is looking at Employee request.
+			//console.log("Employee request: " + currentPTOUserName + " for Manager: " + WAF.directory.currentUser().fullName);
 			$("#textField3").attr("disabled", "disabled"); //First Day Off
 			$("#textField4").attr("disabled", "disabled"); //Last Day Off
 			$("#textField5").attr("disabled", "disabled"); //Return To Work Date
+			$("#textField8").attr("disabled", "disabled"); //Notes
 			
+			$$("button6").disable();
+			$$("button7").disable();
+			$$("combobox1").disable();
+			$("#textField15").attr("disabled", "disabled"); //line item hours
+			
+			if ((WAF.sources.pTO_Request.status === "closed") || (WAF.sources.pTO_Request.status === "rejected")) {
+				$$("combobox2").disable(); //status
+			} else {
+				$$("combobox2").enable(); //status
+			}
+			
+						
+		} else {
+		//Manager is looking at their own request.
 			if (WAF.sources.pTO_Request.status !== "pending") {
 				$$("button6").disable();
 				$$("button7").disable();
 				$$("combobox1").disable();
 				$("#textField15").attr("disabled", "disabled"); //line item hours
 				$$("combobox2").disable(); //status
+				$("#textField8").attr("disabled", "disabled"); //Notes
 				
 			} else {
 				$$("button6").enable();
@@ -131,9 +155,39 @@ function disableInput() {
 				$$("combobox1").enable();
 				$("#textField15").removeAttr("disabled"); //line item hours
 				$$("combobox2").enable(); //status
-			} //(WAF.sources.pTO_Request.status !== "pending") 
-		//}
-	} //(WAF.directory.currentUserBelongsTo("Employee"))
+			}
+			
+			$("#textField3").attr("disabled", "disabled"); //First Day Off
+			$("#textField4").attr("disabled", "disabled"); //Last Day Off
+			$("#textField5").attr("disabled", "disabled"); //Return To Work Date
+		
+			//$("#textField3").removeAttr("disabled"); //First Day Off
+			//$("#textField4").removeAttr("disabled"); //Last Day Off
+			//$("#textField5").removeAttr("disabled"); //Return To Work Date
+			//$("#textField8").removeAttr("disabled"); //Notes
+		}
+		
+	} else {
+		//Employee
+		$("#textField3").attr("disabled", "disabled"); //First Day Off
+		$("#textField4").attr("disabled", "disabled"); //Last Day Off
+		$("#textField5").attr("disabled", "disabled"); //Return To Work Date
+		
+		if (WAF.sources.pTO_Request.status !== "pending") {
+			$$("button6").disable();
+			$$("button7").disable();
+			$$("combobox1").disable();
+			$("#textField15").attr("disabled", "disabled"); //line item hours
+			$$("combobox2").disable(); //status
+			
+		} else {
+			$$("button6").enable();
+			$$("button7").enable();
+			$$("combobox1").enable();
+			$("#textField15").removeAttr("disabled"); //line item hours
+			$$("combobox2").enable(); //status
+		} //(WAF.sources.pTO_Request.status !== "pending") 
+	}
 	
 }
 
@@ -258,21 +312,6 @@ function getNextWorkDay(textFieldIDSelector) {
 function signIn() {
 	$("#errorDiv1").html("");
 	if (WAF.directory.loginByPassword(WAF.sources.loginObject.loginName, WAF.sources.loginObject.password)) {
-		
-		
-//		statusArray = [];
-//		statusArray = WAF.sources.pTO_Request.getStatusList();
-//		WAF.sources.statusArray.sync();
-		
-		//statusArray = [];
-		//statusArray.push({statusName: ''});
-		//statusArray.push({statusName: 'pending'});
-		//statusArray.push({statusName: 'commit'});
-			
-		//statusArray = ds.PTO_Request.getListOfStatus();
-		//WAF.sources.statusArray.sync();
-		
-		/**/
 		statusArray = [];
 		if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
 			(WAF.directory.currentUserBelongsTo("Manager")) ||
@@ -282,7 +321,7 @@ function signIn() {
 			statusArray.push({statusName: 'commit'});
 			statusArray.push({statusName: 'approved'});
 			statusArray.push({statusName: 'rejected'});
-			statusArray.push({statusName: 'returned'});
+			//statusArray.push({statusName: 'returned'});
 			statusArray.push({statusName: 'closed'});
 		} else if (WAF.directory.currentUserBelongsTo("Employee")) {
 			statusArray.push({statusName: ''});
@@ -290,17 +329,6 @@ function signIn() {
 			statusArray.push({statusName: 'commit'});
 		}
 		WAF.sources.statusArray.sync();
-		
-		/**/
-		WAF.sources.pTO_Request.all({
-			onSuccess: function(event) {
-				//statusArray = [];
-				//var myObject = WAF.sources.pTO_Request.getStatusList();
-				//console.log(myObject);
-				//WAF.sources.statusArray.sync();
-			}
-		});
-		
 		
 		
 		$$("richText2").setValue("Signed in as : " + WAF.directory.currentUser().fullName);
@@ -327,7 +355,13 @@ function signIn() {
 		$$("textField1").setValue("");
 		$$("textField2").setValue("");
 		
-		disableInput();
+		WAF.sources.pTO_Request.all({
+			onSuccess: function(event) {
+				disableInput();
+			}
+		});
+		
+		
 		
 		
 
@@ -343,15 +377,21 @@ function signIn() {
 	pTO_RequestEvent.onCurrentElementChange = function pTO_RequestEvent_onCurrentElementChange (event)// @startlock
 	{// @endlock
 		
-		/*
-		var currentStatusArray = WAF.sources.pTO_Request.getStatusList();
-		statusArray = currentStatusArray;
-		WAF.sources.statusArray.sync();
-		console.log(WAF.sources.pTO_Request.status);
-		*/
-		
-		//statusArray.push({statusName: 'approved'});
-		//WAF.sources.statusArray.sync();
+		if (!((WAF.directory.currentUserBelongsTo("Payroll")) || 
+			(WAF.directory.currentUserBelongsTo("Manager")) ||
+			(WAF.directory.currentUserBelongsTo("Administrator")))) {
+			
+			if ((waf.sources.pTO_Request.status !== "pending") && (waf.sources.pTO_Request.status !== "commit")) {
+				$$('combobox2').hide();
+				$$('textField10').show();
+			} else {
+				$$('combobox2').show();
+				$$('textField10').hide();
+			}
+		} else {
+			$$('combobox2').show();
+			$$('textField10').hide();
+		}
 	};// @lock
 
 	button1.click = function button1_click (event)// @startlock
@@ -375,7 +415,6 @@ function signIn() {
 			WAF.sources.statusArray.sync();
 			//WAF.sources.pTO_Request.all();
 			WAF.sources.pTO_Request.setEntityCollection();
-			//disableInput();
 			
 			$$("richText2").setValue("");
 			$$("signOutContainer").hide();
@@ -527,22 +566,6 @@ function signIn() {
 
 	dataGrid1.onRowClick = function dataGrid1_onRowClick (event)// @startlock
 	{// @endlock
-		//statusArray = [];
-		//var currentStatusArray = WAF.sources.pTO_Request.getStatusList();
-		//statusArray = currentStatusArray;
-		//statusArray = [{statusName: "pending"}, {statusName: "commit"}, {statusName: "approved"}];
-		//WAF.sources.statusArray.sync();
-		/*
-		statusArray = [];
-		statusArray.push({statusName: 'pending'});
-		statusArray.push({statusName: 'commit'});
-		statusArray.push({statusName: 'approved'});
-		WAF.sources.statusArray.sync();
-		*/
-		
-		statusArray.push({statusName: 'approved'});
-		WAF.sources.statusArray.sync();
-		
 		disableInput();
 		$("#errorDiv1").html('');
 		
@@ -551,21 +574,14 @@ function signIn() {
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
-		/*
-		compensationArray = [];
-		compensationArray.push({name: 'Floating Day'});
-		compensationArray.push({name: 'Paid Time Off'});
-		WAF.sources.compensationArray.sync();
-		*/
-		
 		WAF.sources.pTO_Request.declareDependencies("requestor");
 		WAF.sources.pTO_Request.all();
 		
 		$("#errorDiv1").html("");
+		$("#textField10").attr("disabled", true);  //Status
 		$("#textField9").attr("disabled", true);  //Name
 		$("#textField7").attr("disabled", true);  //Date Entered
 		$("#textField6").attr("disabled", true);  //Auth date
-		//$$("textField10").disable(); //request line item compensation
 		$$("textField14").disable(); //request line item date
 		
 		if (WAF.directory.currentUser() === null) {

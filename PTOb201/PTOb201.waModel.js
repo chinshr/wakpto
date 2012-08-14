@@ -309,6 +309,9 @@ guidedModel =// @startlock
 				var theDayNumber;
 				var hours;
 				
+				var theClass = this.getDataClass(); //get the dataclass of the entity to save
+				var theClassName = theClass.getName(); //get the dataclass name
+				var oldEntity = theClass(this.getKey()); //find the same entity on disk
 				
 				/*
 				dateCompare = dates.compare(firstDayOff, currentDate);
@@ -339,18 +342,37 @@ guidedModel =// @startlock
 				}//(myUser !== null)				
 				
 				
+				if (this.status === "approved") {
+						this.authorizationDate = new Date();
+				}
+				
 				/**/
+				//Send email when appropriate.
 				if ((myUser !== null) && (!this.isNew())) {
-					if (this.status === "commit") {
+					if ((this.status === "commit") && (oldEntity.status !== "commit")) {
+						//Employee is requesting PTO. Send email to manager.
 						var theEmailWorker = new SharedWorker("sharedWorkers/emailDaemon.js", "emailDaemon");
 						var thePort = theEmailWorker.port; // MessagePort to communicate with the email shared worker.
-						
-						thePort.postMessage({what: 'send email',
+						thePort.postMessage({what: 'requestTimeOff',
 								requestorID : this.requestor.ID,
 								firstDayOff: formatDate(this.firstDayOff),
-								lastDayOff: formatDate(this.lastDayOff)
+								lastDayOff: formatDate(this.lastDayOff),
+								ptoID: this.ID
 						});
-					}
+					}//((this.status === "commit") && (oldEntity.status !== "commit"))
+					
+					if ((this.status === "approved") && (oldEntity.status !== "approved")) {
+						//Manager has approved the request. Send email to employee.
+						var theEmailWorker = new SharedWorker("sharedWorkers/emailDaemon.js", "emailDaemon");
+						var thePort = theEmailWorker.port; // MessagePort to communicate with the email shared worker.
+						thePort.postMessage({what: 'requestApproved',
+								requestorID : this.requestor.ID,
+								firstDayOff: formatDate(this.firstDayOff),
+								lastDayOff: formatDate(this.lastDayOff),
+								ptoID: this.ID
+						});
+					}//((this.status === "approved") && (oldEntity.status !== "approved"))
+					
 				}
 				
 			},// @startlock
@@ -400,7 +422,10 @@ guidedModel =// @startlock
 				
 					//status
 					//Let's think about status June 29 2012
-					
+					if ((oldEntity.status === "closed") || (oldEntity.status === "rejected")) {
+						err = { error : 4011, errorMessage: "You do not have permission to update a closed PTO request."};
+						return err;	
+					}
 					
 					if (this.firstDayOff === null) {
 						err = { error : 4010, errorMessage: "You do not have permission to update the First Day Off field value."};
