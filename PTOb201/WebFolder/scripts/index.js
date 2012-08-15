@@ -125,7 +125,7 @@ function disableInput() {
 			$("#textField3").attr("disabled", "disabled"); //First Day Off
 			$("#textField4").attr("disabled", "disabled"); //Last Day Off
 			$("#textField5").attr("disabled", "disabled"); //Return To Work Date
-			$("#textField8").attr("disabled", "disabled"); //Notes
+			//$("#textField8").attr("disabled", "disabled"); //Notes
 			
 			$$("button6").disable();
 			$$("button7").disable();

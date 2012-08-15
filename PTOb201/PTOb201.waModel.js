@@ -367,9 +367,12 @@ guidedModel =// @startlock
 								requestorID : this.requestor.ID,
 								firstDayOff: formatDate(this.firstDayOff),
 								lastDayOff: formatDate(this.lastDayOff),
-								requestLineItems: requestLineItemsArray
+								requestLineItems: requestLineItemsArray,
+								notes: this.notes
 								//requestLineItems: [{name: "dave"}, {name: "tom"}, {name: "bill"}]
 						});
+						
+						this.notes = "";
 					}//((this.status === "commit") && (oldEntity.status !== "commit"))
 					
 					if ((this.status === "approved") && (oldEntity.status !== "approved")) {
@@ -391,9 +394,13 @@ guidedModel =// @startlock
 								requestorID : this.requestor.ID,
 								firstDayOff: formatDate(this.firstDayOff),
 								lastDayOff: formatDate(this.lastDayOff),
-								requestLineItems: requestLineItemsArray
+								requestLineItems: requestLineItemsArray,
+								notes: this.notes
 						});
+						
+						this.notes = "";
 					}//((this.status === "approved") && (oldEntity.status !== "approved"))
+					
 					
 				}
 				
@@ -480,10 +487,12 @@ guidedModel =// @startlock
 						}
 					}
 					
+					/*
 					if (this.notes != oldEntity.notes) {
 						err = { error : 4060, errorMessage: "You do not have permission to update the Notes field."};
 						return err;		
 					}
+					*/
 					
 					
 					
