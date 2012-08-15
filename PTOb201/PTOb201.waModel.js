@@ -13,7 +13,6 @@ guidedModel =// @startlock
 				var myCurrentUser = currentUser(); // Get the current user.
 				var myUserV = ds.User.find("ID = :1", myCurrentUser.ID);
 				
-				//debugger;
 				if (sessionRef.belongsTo("Administrator")) {
 					//err = { error : 5099, errorMessage: "The Administrator is not allowed to remove PTO Request Line Items."};
 					//return err;
@@ -175,7 +174,6 @@ guidedModel =// @startlock
 					var myCurrentUser = currentUser(); // Get the current user
 					var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity.
 					
-					//debugger;
 					if (this.hoursRequested < oldEntity.hoursRequested) {
 						myUser.ptoHours += oldEntity.hoursRequested - this.hoursRequested;
 					}
@@ -239,7 +237,7 @@ guidedModel =// @startlock
 			},// @lock
 			getLineItemsRange:function(startDate, endDate)
 			{// @lock
-				//debugger;
+		
 				// For the current PTO Request get all line items in date range.
 				//return this.requestLineItemCollection;
 				//return this.requestLineItemCollection.query("compensation = :1", "Floating Day");
@@ -350,6 +348,18 @@ guidedModel =// @startlock
 				//Send email when appropriate.
 				if ((myUser !== null) && (!this.isNew())) {
 					if ((this.status === "commit") && (oldEntity.status !== "commit")) {
+						//Put request line items in an array.
+						var requestLineItemsArray = [];
+						var lineItems = this.requestLineItemCollection;
+						lineItems.forEach(function(lineItem) {
+							var lineItemObj = {};
+							lineItemObj.hoursRequested = lineItem.hoursRequested;
+							lineItemObj.dateRequested = formatDate(lineItem.dateRequested);
+							lineItemObj.compensation = lineItem.compensation;
+							requestLineItemsArray.push(lineItemObj);
+						});
+						
+						
 						//Employee is requesting PTO. Send email to manager.
 						var theEmailWorker = new SharedWorker("sharedWorkers/emailDaemon.js", "emailDaemon");
 						var thePort = theEmailWorker.port; // MessagePort to communicate with the email shared worker.
@@ -357,7 +367,8 @@ guidedModel =// @startlock
 								requestorID : this.requestor.ID,
 								firstDayOff: formatDate(this.firstDayOff),
 								lastDayOff: formatDate(this.lastDayOff),
-								ptoID: this.ID
+								requestLineItems: requestLineItemsArray
+								//requestLineItems: [{name: "dave"}, {name: "tom"}, {name: "bill"}]
 						});
 					}//((this.status === "commit") && (oldEntity.status !== "commit"))
 					
@@ -368,8 +379,7 @@ guidedModel =// @startlock
 						thePort.postMessage({what: 'requestApproved',
 								requestorID : this.requestor.ID,
 								firstDayOff: formatDate(this.firstDayOff),
-								lastDayOff: formatDate(this.lastDayOff),
-								ptoID: this.ID
+								lastDayOff: formatDate(this.lastDayOff)
 						});
 					}//((this.status === "approved") && (oldEntity.status !== "approved"))
 					
@@ -378,7 +388,6 @@ guidedModel =// @startlock
 			},// @startlock
 			onInit:function()
 			{// @endlock
-				//debugger;
 				var sessionRef = currentSession(); // Get session.
 				var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
 				var err;
@@ -715,7 +724,6 @@ guidedModel =// @startlock
 			validatePassword:function(password) //only use the password.
 			{// @lock
 				var ha1 = directory.computeHA1(this.ID, password);
-				console.log("Validate Password ha1: " + ha1 + " this.HA1Key: " + this.HA1Key);
 				return (ha1 === this.HA1Key); //true if validated, false otherwise.
 			}// @startlock
 		},
