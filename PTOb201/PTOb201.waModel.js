@@ -374,12 +374,24 @@ guidedModel =// @startlock
 					
 					if ((this.status === "approved") && (oldEntity.status !== "approved")) {
 						//Manager has approved the request. Send email to employee.
+						//Put request line items in an array.
+						var requestLineItemsArray = [];
+						var lineItems = this.requestLineItemCollection;
+						lineItems.forEach(function(lineItem) {
+							var lineItemObj = {};
+							lineItemObj.hoursRequested = lineItem.hoursRequested;
+							lineItemObj.dateRequested = formatDate(lineItem.dateRequested);
+							lineItemObj.compensation = lineItem.compensation;
+							requestLineItemsArray.push(lineItemObj);
+						});
+						
 						var theEmailWorker = new SharedWorker("sharedWorkers/emailDaemon.js", "emailDaemon");
 						var thePort = theEmailWorker.port; // MessagePort to communicate with the email shared worker.
 						thePort.postMessage({what: 'requestApproved',
 								requestorID : this.requestor.ID,
 								firstDayOff: formatDate(this.firstDayOff),
-								lastDayOff: formatDate(this.lastDayOff)
+								lastDayOff: formatDate(this.lastDayOff),
+								requestLineItems: requestLineItemsArray
 						});
 					}//((this.status === "approved") && (oldEntity.status !== "approved"))
 					
