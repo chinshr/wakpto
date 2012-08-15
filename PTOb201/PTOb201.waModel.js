@@ -345,7 +345,7 @@ guidedModel =// @startlock
 				}
 				
 				/**/
-				//Send email when appropriate.
+				//Employee send email to manager for approval.
 				if ((myUser !== null) && (!this.isNew())) {
 					if ((this.status === "commit") && (oldEntity.status !== "commit")) {
 						//Put request line items in an array.
@@ -375,7 +375,19 @@ guidedModel =// @startlock
 						this.notes = "";
 					}//((this.status === "commit") && (oldEntity.status !== "commit"))
 					
-					if ((this.status === "approved") && (oldEntity.status !== "approved")) {
+					//Manager send email to employee
+					var sendEmaiToManager = false;
+					
+					if ((this.status === "approved") && (oldEntity.status === "commit")) {
+						sendEmaiToManager = true;
+					}
+					
+					if ((this.status === "rejected") && (oldEntity.status === "commit")) {
+						sendEmaiToManager = true;
+					}
+					
+					//if ((this.status === "approved") && (oldEntity.status !== "approved")) {
+					if (sendEmaiToManager) {
 						//Manager has approved the request. Send email to employee.
 						//Put request line items in an array.
 						var requestLineItemsArray = [];
@@ -395,11 +407,15 @@ guidedModel =// @startlock
 								firstDayOff: formatDate(this.firstDayOff),
 								lastDayOff: formatDate(this.lastDayOff),
 								requestLineItems: requestLineItemsArray,
-								notes: this.notes
+								notes: this.notes,
+								status: this.status
 						});
 						
 						this.notes = "";
-					}//((this.status === "approved") && (oldEntity.status !== "approved"))
+						if (this.status === "rejected") {
+							this.status = "pending";
+						}
+					}//sendEmaiToManager)
 					
 					
 				}
