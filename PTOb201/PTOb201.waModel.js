@@ -278,7 +278,11 @@ guidedModel =// @startlock
 				} else {
 					//Load User entity.
 					var myCurrentUser = currentUser(); // Get the current user
+					var sessionRef = currentSession(); // Get session.
+					var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.	
 					var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity.
+					sessionRef.unPromote(promoteToken); //put the session back to normal.
+					
 					if (myUser !== null) {
 						if (myUser.accessLevel < 4) {
 							result = ds.PTO_Request.query("requestor.myManager.login = :1 and status !== :2", myCurrentUser.name, "pending");
@@ -383,8 +387,8 @@ guidedModel =// @startlock
 						
 						new ds.Note({ 
 							date: new Date(),
-							title: "New PTO Request",
-							body: "This is the body",
+							title: "Commit by " + this.requestor.fullName,
+							body: this.emailText,
 							pto: this
 						}).save();
 					}//((this.status === "commit") && (oldEntity.status !== "commit"))
@@ -426,6 +430,13 @@ guidedModel =// @startlock
 						if (this.status === "rejected") {
 							this.status = "pending";
 						}
+						
+						new ds.Note({ 
+							date: new Date(),
+							title: this.status + " " + this.requestor.fullName,
+							body: this.emailText,
+							pto: this
+						}).save();
 					}//sendEmaiToManager)
 				} //((myUser !== null) && (!this.isNew())) {
 				

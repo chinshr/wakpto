@@ -438,8 +438,37 @@ function signIn() {
 			$$('textField10').hide();
 		}
 		
-		//Notes
-		$('#notesContainer').html(WAF.sources.noteCollection.title);
+		
+		var currentPTOID = waf.sources.pTO_Request.ID;
+		var noteCollection = WAF.ds.Note.query("pto.ID = " + currentPTOID, {
+			onSuccess: function(event) {
+				event.entityCollection.toArray("title, body", {onSuccess: function(ev) {
+					var arr = ev.result;
+					var myHTML = '';
+					arr.forEach(function(elem) { 
+						myHTML += '<p class="holiday">' + elem.title + " : " +  elem.body + '</p>';
+					});
+					$('#noteContainer').html(myHTML);
+				}});
+			}
+		});
+		
+		
+		/*
+		ds.Note.all({
+			onSuccess:function(event) {
+			event.entityCollection.toArray("title, body", {onSuccess: function(ev) {
+				var arr = ev.result;
+				var myHTML = '';
+				arr.forEach(function(elem) { 
+					myHTML += '<p class="holiday">' + elem.title + " : " +  elem.body + '</p>';
+				});
+				$('#noteContainer').html('Notes:  <br/><br/>' + myHTML);
+			}});
+		}});
+		*/
+		
+		
 	};// @lock
 
 	button1.click = function button1_click (event)// @startlock
@@ -592,8 +621,6 @@ function signIn() {
 	{// @endlock
 		disableInput();
 		$("#errorDiv1").html('');
-		
-		
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
