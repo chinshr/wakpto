@@ -368,24 +368,21 @@ guidedModel =// @startlock
 								firstDayOff: formatDate(this.firstDayOff),
 								lastDayOff: formatDate(this.lastDayOff),
 								requestLineItems: requestLineItemsArray,
-								notes: this.notes
+								notes: this.emailText
 								//requestLineItems: [{name: "dave"}, {name: "tom"}, {name: "bill"}]
 						});
 						
-						this.notes = "";
+						//this.notes = "";
 					}//((this.status === "commit") && (oldEntity.status !== "commit"))
 					
 					//Manager send email to employee
 					var sendEmaiToManager = false;
-					
 					if ((this.status === "approved") && (oldEntity.status === "commit")) {
 						sendEmaiToManager = true;
 					}
-					
 					if ((this.status === "rejected") && (oldEntity.status === "commit")) {
 						sendEmaiToManager = true;
 					}
-					
 					//if ((this.status === "approved") && (oldEntity.status !== "approved")) {
 					if (sendEmaiToManager) {
 						//Manager has approved the request. Send email to employee.
@@ -411,14 +408,12 @@ guidedModel =// @startlock
 								status: this.status
 						});
 						
-						this.notes = "";
+						//this.notes = "";
 						if (this.status === "rejected") {
 							this.status = "pending";
 						}
 					}//sendEmaiToManager)
-					
-					
-				}
+				} //((myUser !== null) && (!this.isNew())) {
 				
 			},// @startlock
 			onInit:function()

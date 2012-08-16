@@ -2,6 +2,8 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var button12 = {};	// @button
+	var button5 = {};	// @button
 	var pTO_RequestEvent = {};	// @dataSource
 	var button1 = {};	// @button
 	var button24 = {};	// @button
@@ -28,6 +30,42 @@ var yyyy = today.getFullYear();
 if(dd<10){dd='0'+dd} 
 if(mm<10){mm='0'+mm}
 var myCurrentDate = mm+'/'+dd+'/'+yyyy;
+
+function savePTORequest(message) {
+	if (typeof message !== "undefined") {
+		WAF.sources.pTO_Request.emailText = message;
+	}
+	
+	var primKey = WAF.sources.pTO_Request.ID;
+	$("#errorDiv1").html("");
+	WAF.sources.pTO_Request.save({
+        	onSuccess: function(event) {
+			updateUserAccountDisplay();
+			if (event.dataSource.status === "pending") {
+				$("#errorDiv1").html("PTO Request Saved. Double-click any request line item to edit your request.");
+			} else {
+				$("#errorDiv1").html("PTO Request Saved.");
+			}
+			/**/
+			WAF.sources.pTO_Request.all({
+				onSuccess: function (event) {
+					WAF.sources.pTO_Request.selectByKey(primKey);
+					disableInput();
+			}});	
+		},
+           	onError: function(error) {
+           		$('#errorDiv1').html(error['error'][0].message + " (" + error['error'][0].errCode + ")");
+           		//Ask Laurent if serverRefresh supports declareDependencies or autoExpand.
+           		WAF.sources.pTO_Request.serverRefresh({forceReload: true});
+         		/*
+           		WAF.sources.pTO_Request.all({
+					onSuccess: function (event) {
+					WAF.sources.pTO_Request.selectByKey(primKey);
+				}});
+				*/
+          	}		
+      	});
+} //end - savePTORequest()
 
 function formatDate(dateObject) {
 	var curr_date = dateObject.getDate();
@@ -104,7 +142,7 @@ function enableInput() {
 	$("#textField3").removeAttr("disabled"); //First Day Off
 	$("#textField4").removeAttr("disabled"); //Last Day Off
 	$("#textField15").removeAttr("disabled"); //line item hours
-	$$("combobox2").enable(); //status
+	//$$("combobox2").enable(); //status
 	$$("button6").enable();
 	$$("button7").enable();
 }
@@ -188,7 +226,6 @@ function disableInput() {
 			$$("combobox2").enable(); //status
 		} //(WAF.sources.pTO_Request.status !== "pending") 
 	}
-	
 }
 
 function getNextWorkDay(textFieldIDSelector) {
@@ -361,22 +398,30 @@ function signIn() {
 			}
 		});
 		
-		
-		
-		
-
 	} else {
 		$$("signInError").setValue("Invalid login.");
 	}
-}
+} //end signIn()
+
+
 //David Robbins Functions - End
 
 
 // eventHandlers// @lock
 
+	button12.click = function button12_click (event)// @startlock
+	{// @endlock
+		$$('emailMessageDialog').closeDialog(); //ok button
+		savePTORequest($$('textField16').getValue());
+	};// @lock
+
+	button5.click = function button5_click (event)// @startlock
+	{// @endlock
+		$$('emailMessageDialog').closeDialog(); //cancel button
+	};// @lock
+
 	pTO_RequestEvent.onCurrentElementChange = function pTO_RequestEvent_onCurrentElementChange (event)// @startlock
 	{// @endlock
-		
 		if (!((WAF.directory.currentUserBelongsTo("Payroll")) || 
 			(WAF.directory.currentUserBelongsTo("Manager")) ||
 			(WAF.directory.currentUserBelongsTo("Administrator")))) {
@@ -444,38 +489,13 @@ function signIn() {
 	button10.click = function button10_click (event)// @startlock
 	{// @endlock
 		// Save Button
-		var primKey = WAF.sources.pTO_Request.ID;
-		$("#errorDiv1").html("");
-		WAF.sources.pTO_Request.save({
-        	onSuccess: function(event) {
-				updateUserAccountDisplay();
-				if (event.dataSource.status === "pending") {
-					$("#errorDiv1").html("PTO Request Saved. Double-click any request line item to edit your request.");
-				} else {
-					$("#errorDiv1").html("PTO Request Saved.");
-				}
-				/**/
-				WAF.sources.pTO_Request.all({
-					onSuccess: function (event) {
-						WAF.sources.pTO_Request.selectByKey(primKey);
-						disableInput();
-				}});
-				
-			},
-           	onError: function(error) {
-           		$('#errorDiv1').html(error['error'][0].message + " (" + error['error'][0].errCode + ")");
-           		//Ask Laurent if serverRefresh supports declareDependencies or autoExpand.
-           		WAF.sources.pTO_Request.serverRefresh({forceReload: true});
-         		/*
-           		WAF.sources.pTO_Request.all({
-					onSuccess: function (event) {
-						WAF.sources.pTO_Request.selectByKey(primKey);
-				}});
-				*/
-          	}
-      	
-				
-      	});
+		if (WAF.sources.pTO_Request.status === "commit") {
+			$('#emailMessageDialog').css("top", 200);
+			$('#emailMessageDialog').css("left", 300);
+			WAF.widgets['emailMessageDialog'].displayDialog();
+		} else {
+			savePTORequest();
+		}
 	};// @lock
 
 	button9.click = function button9_click (event)// @startlock
@@ -627,6 +647,8 @@ function signIn() {
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("button12", "click", button12.click, "WAF");
+	WAF.addListener("button5", "click", button5.click, "WAF");
 	WAF.addListener("pTO_Request", "onCurrentElementChange", pTO_RequestEvent.onCurrentElementChange, "WAF");
 	WAF.addListener("button1", "click", button1.click, "WAF");
 	WAF.addListener("button24", "click", button24.click, "WAF");
