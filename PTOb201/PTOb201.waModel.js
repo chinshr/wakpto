@@ -372,6 +372,11 @@ guidedModel =// @startlock
 								//requestLineItems: [{name: "dave"}, {name: "tom"}, {name: "bill"}]
 						});
 						
+						if (this.notes === null) {
+							this.notes = "";
+						}
+						this.notes += formatDate(new Date()) + " " + myUser.fullName;
+						this.notes += this.emailText;
 						//this.notes = "";
 					}//((this.status === "commit") && (oldEntity.status !== "commit"))
 					

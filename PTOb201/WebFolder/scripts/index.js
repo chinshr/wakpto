@@ -185,7 +185,7 @@ function disableInput() {
 				$$("combobox1").disable();
 				$("#textField15").attr("disabled", "disabled"); //line item hours
 				$$("combobox2").disable(); //status
-				$("#textField8").attr("disabled", "disabled"); //Notes
+				//$("#textField8").attr("disabled", "disabled"); //Notes
 				
 			} else {
 				$$("button6").enable();
@@ -490,6 +490,7 @@ function signIn() {
 	{// @endlock
 		// Save Button
 		if (WAF.sources.pTO_Request.status === "commit") {
+			$$('emailMessageDialogTitle').setValue("Enter Message To Be Included in Email to Manager");
 			$('#emailMessageDialog').css("top", 200);
 			$('#emailMessageDialog').css("left", 300);
 			WAF.widgets['emailMessageDialog'].displayDialog();
@@ -603,6 +604,7 @@ function signIn() {
 		$("#textField7").attr("disabled", true);  //Date Entered
 		$("#textField6").attr("disabled", true);  //Auth date
 		$$("textField14").disable(); //request line item date
+		$("#textField8").attr("disabled", "disabled"); //Notes
 		
 		if (WAF.directory.currentUser() === null) {
 			$$("richText2").setValue("");
