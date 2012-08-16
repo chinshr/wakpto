@@ -372,12 +372,21 @@ guidedModel =// @startlock
 								//requestLineItems: [{name: "dave"}, {name: "tom"}, {name: "bill"}]
 						});
 						
+						/*
 						if (this.notes === null) {
 							this.notes = "";
 						}
 						this.notes += formatDate(new Date()) + " " + myUser.fullName;
 						this.notes += this.emailText;
 						//this.notes = "";
+						*/
+						
+						new ds.Note({ 
+							date: new Date(),
+							title: "New PTO Request",
+							body: "This is the body",
+							pto: this
+						}).save();
 					}//((this.status === "commit") && (oldEntity.status !== "commit"))
 					
 					//Manager send email to employee

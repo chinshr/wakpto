@@ -437,6 +437,9 @@ function signIn() {
 			$$('combobox2').show();
 			$$('textField10').hide();
 		}
+		
+		//Notes
+		$('#notesContainer').html(WAF.sources.noteCollection.title);
 	};// @lock
 
 	button1.click = function button1_click (event)// @startlock
