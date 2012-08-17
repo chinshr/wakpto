@@ -412,12 +412,16 @@ function signIn() {
 	button12.click = function button12_click (event)// @startlock
 	{// @endlock
 		$$('emailMessageDialog').closeDialog(); //ok button
-		savePTORequest($$('textField16').getValue());
+		//savePTORequest($$('emailBody').getValue());
+		//savePTORequest(WAF.sources.emailMessageObject.body);
+		savePTORequest($('#emailBody').val());
+		//$('emailBody').val("");
 	};// @lock
 
 	button5.click = function button5_click (event)// @startlock
 	{// @endlock
 		$$('emailMessageDialog').closeDialog(); //cancel button
+		//$('emailBody').val("");
 	};// @lock
 
 	pTO_RequestEvent.onCurrentElementChange = function pTO_RequestEvent_onCurrentElementChange (event)// @startlock
@@ -522,10 +526,28 @@ function signIn() {
 	{// @endlock
 		// Save Button
 		if (WAF.sources.pTO_Request.status === "commit") {
+			//$('#emailBody').val("");
+			$$('emailBody')._tmpVal = "";
+			$$('emailBody').setValue("");
 			$$('emailMessageDialogTitle').setValue("Enter Message To Be Included in Email to Manager");
 			$('#emailMessageDialog').css("top", 200);
-			$('#emailMessageDialog').css("left", 300);
+			$('#emailMessageDialog').css("left", 400);
 			WAF.widgets['emailMessageDialog'].displayDialog();
+			//WAF.sources.emailMessageObject.body = "";
+			//WAF.sources.emailMessageObject.sync();
+			
+			
+		} else if ((WAF.sources.pTO_Request.status === "rejected") || (WAF.sources.pTO_Request.status === "approved")) {
+			$$('emailBody')._tmpVal = "";
+			$$('emailBody').setValue("");
+			//$('#emailBody').val("");
+			//_tmpVal
+			$$('emailMessageDialogTitle').setValue("Enter Message To Be Included in Email to Employee");
+			$('#emailMessageDialog').css("top", 200);
+			$('#emailMessageDialog').css("left", 400);
+			WAF.widgets['emailMessageDialog'].displayDialog();
+			//WAF.sources.emailMessageObject.body = "";
+			//WAF.sources.emailMessageObject.sync();
 		} else {
 			savePTORequest();
 		}

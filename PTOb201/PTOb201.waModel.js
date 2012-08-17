@@ -387,8 +387,9 @@ guidedModel =// @startlock
 						
 						new ds.Note({ 
 							date: new Date(),
-							title: "Commit by " + this.requestor.fullName,
+							title: "PTO Request from " + this.requestor.fullName + " submitted to Manager.",
 							body: this.emailText,
+							date: new Date(),
 							pto: this
 						}).save();
 					}//((this.status === "commit") && (oldEntity.status !== "commit"))
@@ -422,21 +423,25 @@ guidedModel =// @startlock
 								firstDayOff: formatDate(this.firstDayOff),
 								lastDayOff: formatDate(this.lastDayOff),
 								requestLineItems: requestLineItemsArray,
-								notes: this.notes,
+								notes: this.emailText,
 								status: this.status
 						});
 						
 						//this.notes = "";
+						
+						new ds.Note({ 
+							date: new Date(),
+							title: "PTO  request from "  + this.requestor.fullName + " "  + this.status + " by " + this.requestor.myManager.fullName,
+							body: this.emailText,
+							pto: this
+						}).save();
+						
+						
 						if (this.status === "rejected") {
 							this.status = "pending";
 						}
 						
-						new ds.Note({ 
-							date: new Date(),
-							title: this.status + " " + this.requestor.fullName,
-							body: this.emailText,
-							pto: this
-						}).save();
+						
 					}//sendEmaiToManager)
 				} //((myUser !== null) && (!this.isNew())) {
 				
