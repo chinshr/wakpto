@@ -7656,3 +7656,139 @@
 2012-08-17 08:49:34 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database closed (duration: 405 ms)
 2012-08-17 08:49:34 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project closed (duration: 425 ms)
 2012-08-17 08:49:34 [com.wakanda-software.PTOb201] INFO - Solution closed (duration: 1240 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 15 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 10 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 20 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 15 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 19 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 82 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 21 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 75 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 24 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 57 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 9 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 6 ms)
+2012-08-17 08:53:37 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 149 ms)
+2012-08-17 11:08:50 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-17 11:08:50 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-17 11:08:51 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1133 ms)
+2012-08-17 11:08:51 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-17 11:08:53 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2046 ms)
+2012-08-17 11:08:53 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3180 ms)
+2012-08-17 11:08:53 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-17 11:08:53 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 14 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 10 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 28 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 14 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 17 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 103 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 22 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 65 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 26 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 58 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 11 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 5 ms)
+2012-08-17 11:09:24 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 141 ms)
+2012-08-17 11:51:11 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-17 11:51:11 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-17 11:51:12 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1053 ms)
+2012-08-17 11:51:12 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-17 11:51:14 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2053 ms)
+2012-08-17 11:51:14 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3107 ms)
+2012-08-17 11:51:14 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-17 11:51:14 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 20 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 13 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 23 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 25 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 28 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 98 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 21 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 62 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 22 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 54 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 12 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 8 ms)
+2012-08-17 11:54:21 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 138 ms)
+2012-08-17 12:23:29 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-17 12:23:29 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-17 12:23:30 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1048 ms)
+2012-08-17 12:23:30 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-17 12:23:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2045 ms)
+2012-08-17 12:23:32 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3093 ms)
+2012-08-17 12:23:32 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-17 12:23:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project
+2012-08-17 12:24:31 [com.wakanda-software.PTOb201] INFO - Opening the solution
+2012-08-17 12:24:31 [com.wakanda-software.PTOb201] INFO - Opening the users and groups directory
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201] INFO - Users and groups directory opened (duration: 25 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the project
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Opening the database
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Database opened (duration: 10 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Project opened (duration: 20 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the project
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Opening the database
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Database opened (duration: 5 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project opened (duration: 8 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201] INFO - Solution opened (duration: 80 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201] INFO - Starting the solution
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the project
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Starting the HTTP server
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - HTTP server started (duration: 22 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Project started (duration: 63 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the project
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Starting the HTTP server
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - HTTP server started (duration: 28 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project started (duration: 61 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Executing the bootstrap(s)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.PTOb201] INFO - Bootstrap(s) executed (duration: 10 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Executing the bootstrap(s)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Bootstrap(s) executed (duration: 5 ms)
+2012-08-17 12:24:32 [com.wakanda-software.PTOb201] INFO - Solution started (duration: 140 ms)
+2012-08-17 12:34:48 [com.wakanda-software.PTOb201] INFO - Stopping the solution
+2012-08-17 12:34:48 [com.wakanda-software.PTOb201.PTOb201] INFO - Stopping the project
+2012-08-17 12:34:49 [com.wakanda-software.PTOb201.PTOb201] INFO - Project stopped (duration: 1049 ms)
+2012-08-17 12:34:49 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Stopping the project
+2012-08-17 12:34:51 [com.wakanda-software.PTOb201.ServerAdmin] INFO - Project stopped (duration: 2051 ms)
+2012-08-17 12:34:51 [com.wakanda-software.PTOb201] INFO - Solution stopped (duration: 3101 ms)
+2012-08-17 12:34:51 [com.wakanda-software.PTOb201] INFO - Closing the solution
+2012-08-17 12:34:51 [com.wakanda-software.PTOb201.PTOb201] INFO - Closing the project

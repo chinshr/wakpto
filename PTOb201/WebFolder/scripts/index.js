@@ -50,6 +50,7 @@ function savePTORequest(message) {
 			WAF.sources.pTO_Request.all({
 				onSuccess: function (event) {
 					WAF.sources.pTO_Request.selectByKey(primKey);
+					createEmailAccordian();
 					disableInput();
 			}});	
 		},
@@ -346,6 +347,37 @@ function getNextWorkDay(textFieldIDSelector) {
 	//return lastDay.toDateString();
 }
 
+function createEmailAccordian() {
+	$('#noteDL').children().remove();
+	
+	var currentPTOID = waf.sources.pTO_Request.ID;
+	
+	var noteCollection = WAF.ds.Note.query("pto.ID = " + currentPTOID, {
+		onSuccess: function(event) {
+			event.entityCollection.toArray("date, title, body", {onSuccess: function(ev) {
+				var arr = ev.result;
+				//var myHTML = '';
+				arr.forEach(function(elem) { 
+					$('<dt>', {
+						text: formatDate(ISOToDate(elem.date)) + " : " + elem.title
+					}).appendTo('#noteDL');		
+					
+					
+					var myBodyDiv = $('<div>', {
+						text: elem.body,
+						"class" : "noteBodyDiv"
+					});
+									
+					var myDD = $('<dd>');
+					myDD.append(myBodyDiv);
+					$('#noteDL').append(myDD);
+				});
+				//$('#noteContainer').html(myHTML);
+			}});
+		}
+	});
+}
+
 function signIn() {
 	$("#errorDiv1").html("");
 	if (WAF.directory.loginByPassword(WAF.sources.loginObject.loginName, WAF.sources.loginObject.password)) {
@@ -395,6 +427,7 @@ function signIn() {
 		WAF.sources.pTO_Request.all({
 			onSuccess: function(event) {
 				disableInput();
+				createEmailAccordian();
 			}
 		});
 		
@@ -441,21 +474,6 @@ function signIn() {
 			$$('combobox2').show();
 			$$('textField10').hide();
 		}
-		
-		
-		var currentPTOID = waf.sources.pTO_Request.ID;
-		var noteCollection = WAF.ds.Note.query("pto.ID = " + currentPTOID, {
-			onSuccess: function(event) {
-				event.entityCollection.toArray("date, title, body", {onSuccess: function(ev) {
-					var arr = ev.result;
-					var myHTML = '';
-					arr.forEach(function(elem) { 
-						myHTML += '<p class="holiday">' + formatDate(ISOToDate(elem.date)) + " : " + elem.title + " : " +  elem.body + '</p>';
-					});
-					$('#noteContainer').html(myHTML);
-				}});
-			}
-		});
 	};// @lock
 
 	button1.click = function button1_click (event)// @startlock
@@ -626,6 +644,7 @@ function signIn() {
 	{// @endlock
 		disableInput();
 		$("#errorDiv1").html('');
+		createEmailAccordian();
 	};// @lock
 
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
@@ -681,6 +700,14 @@ function signIn() {
 		compensationArray.push({title: 'Floating Day'});
 		compensationArray.push({title: 'Paid Time Off'});
 		WAF.sources.compensationArray.sync();
+		
+		$('dl').on('click', 'dt', function() {
+			$this = $(this);
+			$this.nextUntil('dt').slideDown(300);
+			$this.siblings('dt').nextUntil('dt').slideUp(300);
+		});
+		
+		//$('dd').hide();	
 	};// @lock
 
 // @region eventManager// @startlock
