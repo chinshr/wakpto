@@ -5150,3 +5150,224 @@
 2012-08-16 15:04:30 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,exception,event internally:,[object Object],(request_seq: undefined)
 2012-08-16 15:04:30 [JSDEBUGGER] INFO - WARNING : Bottom> Received a "break" event without "contextcreated" event,4505882016
 2012-08-16 15:04:30 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextcreated,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - WARNING : undefined> getStacks() should be named getStack()
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - WARNING : undefined> getStacks() should be named getStack()
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> setReady from crossfireClient_ontemplatesloaded
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> setReady from crossfireClient_ontemplatesloaded
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,exception,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - WARNING : Right> Received a "break" event without "contextcreated" event,4511436624
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,contextcreated,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : calling getstack from the context,Context{id: "4511436624stackSize: 0", }
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - WARNING : context doesn't exist anymore,[object Object]
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,contextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,exception,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - WARNING : Bottom> Received a "break" event without "contextcreated" event,4511436624
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextcreated,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,currentcontextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,currentcontextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,ready,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,ready,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> getBreakpoints from crossfireClient_onready_breakpointListener,[object Object]
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,breakpointsloaded,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,breakpointsloaded,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,stacksloaded,event internally:,[object Object],(request_seq: 0)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,stackready,event internally:,[object Object],(request_seq: 1)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,stacksloaded,event internally:,[object Object],(request_seq: 0)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,stackready,event internally:,[object Object],(request_seq: 100001)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,4,2,100001
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,4,1,100002
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextslisted,event internally:,[object Object],(request_seq: 2)
+2012-08-17 08:30:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,contextslisted,event internally:,[object Object],(request_seq: 2)
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100001)
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100001)
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100002)
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100002)
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,consoleerror,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - DEBUG : crossfireClient_onmessage_consoleListener_mapData - html:,<!--
+* This file is part of Wakanda software, licensed by 4D under
+*  (i) the GNU General Public License version 3 (GNU GPL v3), or
+*  (ii) the Affero General Public License version 3 (AGPL v3) or
+*  (iii) a commercial license.
+* This file remains the exclusive property of 4D and/or its licensors
+* and is protected by national and international legislations.
+* In any event, Licensee's compliance with the terms and conditions
+* of the applicable license constitutes a prerequisite to any use of this file.
+* Except as otherwise expressly stated in the applicable license,
+* such license does not include any other license or rights on this file,
+* 4D's and/or its licensors' trademarks and/or other proprietary rights.
+* Consequently, no title, copyright or other proprietary rights
+* other than those specified in the applicable license is granted.
+-->
+	<span class="syntaxColor-string">Exception Error : Write failed</span>
+   	
+2012-08-17 08:31:00 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,consoleerror,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:31:47 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,4,1,100003
+2012-08-17 08:31:47 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100003)
+2012-08-17 08:31:47 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:31:47 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100003)
+2012-08-17 08:31:47 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:31:47 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:31:47 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:31:47 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:31:49 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,4,15,100004
+2012-08-17 08:31:50 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100004)
+2012-08-17 08:31:50 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:31:50 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100004)
+2012-08-17 08:31:50 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:31:50 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:31:50 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:07 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,framechange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:07 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,framechange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:07 [JSDEBUGGER] INFO - LOG : Right Debugger.getScopes ,4511436624,2
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,scopesreceived,event internally:,[object Object],(request_seq: 10)
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,scopesreceived,event internally:,[object Object],(request_seq: 10)
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - ERROR : onscopesreceived: frameIndex is not available
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,2,17,100005
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,2,1,100006
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100005)
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100005)
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100006)
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100006)
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,consoleerror,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - DEBUG : crossfireClient_onmessage_consoleListener_mapData - html:,<!--
+* This file is part of Wakanda software, licensed by 4D under
+*  (i) the GNU General Public License version 3 (GNU GPL v3), or
+*  (ii) the Affero General Public License version 3 (AGPL v3) or
+*  (iii) a commercial license.
+* This file remains the exclusive property of 4D and/or its licensors
+* and is protected by national and international legislations.
+* In any event, Licensee's compliance with the terms and conditions
+* of the applicable license constitutes a prerequisite to any use of this file.
+* Except as otherwise expressly stated in the applicable license,
+* such license does not include any other license or rights on this file,
+* 4D's and/or its licensors' trademarks and/or other proprietary rights.
+* Consequently, no title, copyright or other proprietary rights
+* other than those specified in the applicable license is granted.
+-->
+	<span class="syntaxColor-string">Exception Error : Write failed</span>
+   	
+2012-08-17 08:32:08 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,consoleerror,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:11 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,framechange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:11 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,framechange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:11 [JSDEBUGGER] INFO - LOG : Right Debugger.getScopes ,4511436624,3
+2012-08-17 08:32:11 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,scopesreceived,event internally:,[object Object],(request_seq: 14)
+2012-08-17 08:32:11 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,scopesreceived,event internally:,[object Object],(request_seq: 14)
+2012-08-17 08:32:11 [JSDEBUGGER] INFO - ERROR : onscopesreceived: frameIndex is not available
+2012-08-17 08:32:11 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,3,30,100007
+2012-08-17 08:32:11 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,3,1,100008
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100007)
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100007)
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100008)
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100008)
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,consoleerror,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - DEBUG : crossfireClient_onmessage_consoleListener_mapData - html:,<!--
+* This file is part of Wakanda software, licensed by 4D under
+*  (i) the GNU General Public License version 3 (GNU GPL v3), or
+*  (ii) the Affero General Public License version 3 (AGPL v3) or
+*  (iii) a commercial license.
+* This file remains the exclusive property of 4D and/or its licensors
+* and is protected by national and international legislations.
+* In any event, Licensee's compliance with the terms and conditions
+* of the applicable license constitutes a prerequisite to any use of this file.
+* Except as otherwise expressly stated in the applicable license,
+* such license does not include any other license or rights on this file,
+* 4D's and/or its licensors' trademarks and/or other proprietary rights.
+* Consequently, no title, copyright or other proprietary rights
+* other than those specified in the applicable license is granted.
+-->
+	<span class="syntaxColor-string">Exception Error : Write failed</span>
+   	
+2012-08-17 08:32:12 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,consoleerror,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:21 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,resume,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:21 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,resume,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:22 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,enabledpanels,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:32:22 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,enabledpanels,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - WARNING : undefined> getStacks() should be named getStack()
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - WARNING : undefined> getStacks() should be named getStack()
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> setReady from crossfireClient_ontemplatesloaded
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> setReady from crossfireClient_ontemplatesloaded
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,exception,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - WARNING : Right> Received a "break" event without "contextcreated" event,4511436624
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,contextcreated,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : calling getstack from the context,Context{id: "4511436624stackSize: 0", }
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - WARNING : context doesn't exist anymore,[object Object]
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,contextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,exception,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - WARNING : Bottom> Received a "break" event without "contextcreated" event,4511436624
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextcreated,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,currentcontextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,currentcontextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,ready,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,ready,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> getBreakpoints from crossfireClient_onready_breakpointListener,[object Object]
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,breakpointsloaded,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,breakpointsloaded,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,stacksloaded,event internally:,[object Object],(request_seq: 18)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,stackready,event internally:,[object Object],(request_seq: 1)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,stacksloaded,event internally:,[object Object],(request_seq: 18)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,stackready,event internally:,[object Object],(request_seq: 100001)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,2,46,100001
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4511436624,2,45,100002
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextslisted,event internally:,[object Object],(request_seq: 20)
+2012-08-17 08:40:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,contextslisted,event internally:,[object Object],(request_seq: 20)
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100001)
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100001)
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100002)
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100002)
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,consoleerror,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - DEBUG : crossfireClient_onmessage_consoleListener_mapData - html:,<!--
+* This file is part of Wakanda software, licensed by 4D under
+*  (i) the GNU General Public License version 3 (GNU GPL v3), or
+*  (ii) the Affero General Public License version 3 (AGPL v3) or
+*  (iii) a commercial license.
+* This file remains the exclusive property of 4D and/or its licensors
+* and is protected by national and international legislations.
+* In any event, Licensee's compliance with the terms and conditions
+* of the applicable license constitutes a prerequisite to any use of this file.
+* Except as otherwise expressly stated in the applicable license,
+* such license does not include any other license or rights on this file,
+* 4D's and/or its licensors' trademarks and/or other proprietary rights.
+* Consequently, no title, copyright or other proprietary rights
+* other than those specified in the applicable license is granted.
+-->
+	<span class="syntaxColor-string">Exception Error : undefined</span>
+   	
+2012-08-17 08:41:00 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,consoleerror,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:41:07 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,resume,event internally:,[object Object],(request_seq: undefined)
+2012-08-17 08:41:07 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,resume,event internally:,[object Object],(request_seq: undefined)
