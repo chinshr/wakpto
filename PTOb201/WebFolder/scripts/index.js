@@ -380,6 +380,7 @@ function createEmailAccordian() {
 
 function signIn() {
 	$("#errorDiv1").html("");
+	$$("signInError").setValue("");
 	if (WAF.directory.loginByPassword(WAF.sources.loginObject.loginName, WAF.sources.loginObject.password)) {
 		statusArray = [];
 		if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
