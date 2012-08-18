@@ -284,10 +284,19 @@ function getNextWorkDay(textFieldIDSelector) {
 	} //Switch
 	
 	var dd = lastDayArray[1];
-	
-	
 	var lastDay = new Date(yyyy, mm, dd);
-	lastDay.setDate(lastDay.getDate()+1);
+	
+	if(lastDay.getDay() == 5) {
+		//Friday
+		lastDay.setDate(lastDay.getDate()+3);
+	} else if (lastDay.getDay() == 6) {
+		//Saturday
+		lastDay.setDate(lastDay.getDate()+2);
+	} else {
+		lastDay.setDate(lastDay.getDate()+1);
+	}
+	
+	
 	var yyyyNext = lastDay.getFullYear();
 	var mmNext = lastDay.getMonth();
 	
@@ -480,6 +489,7 @@ function signIn() {
 	button1.click = function button1_click (event)// @startlock
 	{// @endlock
 		//Cancel Changes to PTO Request
+		$('#errorDiv1').html("");
 		var primKey = WAF.sources.pTO_Request.ID;
 		WAF.sources.pTO_Request.all({
 			onSuccess: function (event) {
