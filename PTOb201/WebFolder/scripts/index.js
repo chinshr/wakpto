@@ -47,7 +47,9 @@ function savePTORequest(message) {
 				$("#errorDiv1").html("PTO Request Saved.");
 			}
 			/**/
-			WAF.sources.pTO_Request.all({
+			WAF.sources.pTO_Request.query(
+				"status !== :1", "closed",
+				{
 				onSuccess: function (event) {
 					WAF.sources.pTO_Request.selectByKey(primKey);
 					createEmailAccordian();
@@ -434,12 +436,18 @@ function signIn() {
 		$$("textField1").setValue("");
 		$$("textField2").setValue("");
 		
-		WAF.sources.pTO_Request.all({
+		//WAF.sources.pTO_Request.query("status !== :1", "closed");
+		WAF.sources.pTO_Request.query(
+			"status !== :1", "closed",
+			{
 			onSuccess: function(event) {
 				disableInput();
 				createEmailAccordian();
 			}
 		});
+		
+		//Closed PTOs.
+		waf.sources.pTO_Request1.query("status = :1", "closed");
 		
 	} else {
 		$$("signInError").setValue("Invalid login.");
@@ -507,7 +515,7 @@ function signIn() {
 
 	button24.click = function button24_click (event)// @startlock
 	{// @endlock
-		//logout
+		//signout
 		$("#errorDiv1").html("");
 		if (WAF.directory.logout()) {
 			//reset status array
@@ -515,6 +523,7 @@ function signIn() {
 			WAF.sources.statusArray.sync();
 			//WAF.sources.pTO_Request.all();
 			WAF.sources.pTO_Request.setEntityCollection();
+			WAF.sources.pTO_Request1.setEntityCollection();
 			
 			$$("richText2").setValue("");
 			$$("signOutContainer").hide();
@@ -661,7 +670,8 @@ function signIn() {
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		WAF.sources.pTO_Request.declareDependencies("requestor");
-		WAF.sources.pTO_Request.all();
+		//WAF.sources.pTO_Request.all();
+		//WAF.sources.pTO_Request.query("status !== :1", "closed");
 		
 		$("#errorDiv1").html("");
 		$("#textField10").attr("disabled", true);  //Status
