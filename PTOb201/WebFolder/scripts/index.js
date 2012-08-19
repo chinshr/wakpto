@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var dataGrid2 = {};	// @dataGrid
 	var button12 = {};	// @button
 	var button5 = {};	// @button
 	var pTO_RequestEvent = {};	// @dataSource
@@ -17,7 +18,6 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var dataGrid3 = {};	// @dataGrid
 	var button22 = {};	// @button
 	var button21 = {};	// @button
-	var dataGrid1 = {};	// @dataGrid
 	var documentEvent = {};	// @document
 // @endregion// @endlock
 
@@ -452,6 +452,13 @@ function signIn() {
 
 // eventHandlers// @lock
 
+	dataGrid2.onRowClick = function dataGrid2_onRowClick (event)// @startlock
+	{// @endlock
+		disableInput();
+		$("#errorDiv1").html('');
+		createEmailAccordian();
+	};// @lock
+
 	button12.click = function button12_click (event)// @startlock
 	{// @endlock
 		$$('emailMessageDialog').closeDialog(); //ok button
@@ -651,13 +658,6 @@ function signIn() {
 		$$('dialog3').closeDialog(); //ok button
 	};// @lock
 
-	dataGrid1.onRowClick = function dataGrid1_onRowClick (event)// @startlock
-	{// @endlock
-		disableInput();
-		$("#errorDiv1").html('');
-		createEmailAccordian();
-	};// @lock
-
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		WAF.sources.pTO_Request.declareDependencies("requestor");
@@ -722,6 +722,7 @@ function signIn() {
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("dataGrid2", "onRowClick", dataGrid2.onRowClick, "WAF");
 	WAF.addListener("button12", "click", button12.click, "WAF");
 	WAF.addListener("button5", "click", button5.click, "WAF");
 	WAF.addListener("pTO_Request", "onCurrentElementChange", pTO_RequestEvent.onCurrentElementChange, "WAF");
@@ -737,7 +738,6 @@ function signIn() {
 	WAF.addListener("dataGrid3", "onRowDblClick", dataGrid3.onRowDblClick, "WAF");
 	WAF.addListener("button22", "click", button22.click, "WAF");
 	WAF.addListener("button21", "click", button21.click, "WAF");
-	WAF.addListener("dataGrid1", "onRowClick", dataGrid1.onRowClick, "WAF");
 	WAF.addListener("document", "onLoad", documentEvent.onLoad, "WAF");
 // @endregion
 };// @endlock
