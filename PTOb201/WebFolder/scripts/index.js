@@ -454,6 +454,10 @@ function signIn() {
 	}
 } //end signIn()
 
+function handleEmailMessageDialog() {
+	$$('emailMessageDialog').closeDialog(); 
+	savePTORequest($('#emailBody').val());
+}
 
 //David Robbins Functions - End
 
@@ -469,11 +473,8 @@ function signIn() {
 
 	button12.click = function button12_click (event)// @startlock
 	{// @endlock
-		$$('emailMessageDialog').closeDialog(); //ok button
-		//savePTORequest($$('emailBody').getValue());
-		//savePTORequest(WAF.sources.emailMessageObject.body);
-		savePTORequest($('#emailBody').val());
-		//$('emailBody').val("");
+		//ok button for email message dialog.
+		handleEmailMessageDialog()
 	};// @lock
 
 	button5.click = function button5_click (event)// @startlock
@@ -560,7 +561,10 @@ function signIn() {
 			$$('emailMessageDialogTitle').setValue("Enter Message To Be Included in Email to Manager");
 			$('#emailMessageDialog').css("top", 285);
 			$('#emailMessageDialog').css("left", 400);
+			
 			WAF.widgets['emailMessageDialog'].displayDialog();
+			$$('emailBody').focus();
+			
 			//WAF.sources.emailMessageObject.body = "";
 			//WAF.sources.emailMessageObject.sync();
 			
@@ -573,7 +577,10 @@ function signIn() {
 			$$('emailMessageDialogTitle').setValue("Enter Message To Be Included in Email to Employee");
 			$('#emailMessageDialog').css("top", 200);
 			$('#emailMessageDialog').css("left", 400);
+			
 			WAF.widgets['emailMessageDialog'].displayDialog();
+			$$('emailBody').focus();
+			
 			//WAF.sources.emailMessageObject.body = "";
 			//WAF.sources.emailMessageObject.sync();
 		} else {
@@ -714,6 +721,13 @@ function signIn() {
 		$('#textField1, #textField2').live('keyup', function (e) {
 	   		if ( e.keyCode == 13 ){
 	   			signIn();
+	    	}
+		});
+		
+		//Handle return key if user is in email message dialog.
+		$('#emailBody').live('keyup', function (e) {
+	   		if ( e.keyCode == 13 ){
+	   			handleEmailMessageDialog()
 	    	}
 		});
 		

@@ -123,7 +123,16 @@ guidedModel =// @startlock
 							} //(this.compensation === "Floating Day")
 							
 							if (this.compensation === "Paid Time Off") {
-								
+								if ((this.hoursRequested < 1) || (this.hoursRequested > 7)) {
+									err = { error : 5052, errorMessage: "You cannot request hours less than 1 or greater than 8."};
+									return err;
+								} else {
+									//check if we have enough hours.
+									if ((this.hoursRequested > myUserV.ptoHours) && (this.hoursRequested > oldEntity.hoursRequested)){
+										err = { error : 5054, errorMessage: "You do not have enough hours in your bank for this request."};
+										return err;
+									}
+								}//((this.hoursRequested < 1) || (this.hoursRequested > 7))
 							}
 						} else {
 						//Did not change compensation method
