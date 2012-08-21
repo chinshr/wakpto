@@ -24,7 +24,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 				$('#calendar').fullCalendar({
        				 // put your options and callbacks here
        				height: 650,
-        			weekends: false, // will hide Saturdays and Sundays
+        			weekends: true, // will hide Saturdays and Sundays
         			events: event.result
 			        /*
 			        events: [
