@@ -20,7 +20,7 @@ guidedModel =// @startlock
 				var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.	
 				//if (loginByPassword("admin", "admin")) {	
 					var eventArray = [];		
-					var ptoLineItems = ds.RequestLineItem.all();
+					var ptoLineItems = ds.RequestLineItem.query("ptoRequest.status = :1", "approved");
 					
 					/**/
 					ptoLineItems.forEach(function(lineItem) {
