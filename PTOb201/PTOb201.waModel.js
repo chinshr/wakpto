@@ -3,6 +3,48 @@ guidedModel =// @startlock
 {
 	RequestLineItem :
 	{
+		methods :
+		{// @endlock
+			getCalendarArray:function()
+			{// @lock
+				// Add your code here
+				//{title  : 'event1', start  : '2012-08-01'}
+				
+				/*
+				eventArray.push({title  : 'Tim Penner : Floating Day', start  : '2012-08-01'});
+				eventArray.push({title  : 'Tim Penner : Floating Day', start  : '2012-08-02'});
+				eventArray.push({title  : 'Josh Fletcher : Paid Time Off : 4hrs', start  : '2012-09-05'});
+				*/
+				
+				//var sessionRef = currentSession(); // Get session.
+				//var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.	
+				if (loginByPassword("admin", "admin")) {	
+					var eventArray = [];		
+					var ptoLineItems = ds.RequestLineItem.all();
+					
+					/**/
+					ptoLineItems.forEach(function(lineItem) {
+						var eventObj = {};
+						if (typeof lineItem.ptoRequest.requestor !== "undefined") {
+							eventObj.title =  lineItem.ptoRequest.requestor.fullName + " : " + lineItem.compensation;
+							if (lineItem.compensation === "Paid Time Off") {
+								eventObj.title += " : " + lineItem.hoursRequested;
+							}
+							eventObj.start = formatDateForCalendar(lineItem.dateRequested);
+							eventArray.push(eventObj);
+						}
+					});
+					
+					
+					logout();
+					return eventArray;
+					
+				}
+				//sessionRef.unPromote(promoteToken); //put the session back to normal.
+				
+				
+			}// @startlock
+		},
 		events :
 		{
 			onRemove:function()
