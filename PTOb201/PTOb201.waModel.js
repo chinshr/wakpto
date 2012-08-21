@@ -16,31 +16,34 @@ guidedModel =// @startlock
 				eventArray.push({title  : 'Josh Fletcher : Paid Time Off : 4hrs', start  : '2012-09-05'});
 				*/
 				
-				//var sessionRef = currentSession(); // Get session.
-				//var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.	
-				if (loginByPassword("admin", "admin")) {	
+				var sessionRef = currentSession(); // Get session.
+				var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.	
+				//if (loginByPassword("admin", "admin")) {	
 					var eventArray = [];		
 					var ptoLineItems = ds.RequestLineItem.all();
 					
 					/**/
 					ptoLineItems.forEach(function(lineItem) {
 						var eventObj = {};
-						if (typeof lineItem.ptoRequest.requestor !== "undefined") {
-							eventObj.title =  lineItem.ptoRequest.requestor.fullName + " : " + lineItem.compensation;
-							if (lineItem.compensation === "Paid Time Off") {
-								eventObj.title += " : " + lineItem.hoursRequested;
+						if (typeof lineItem.ptoRequest !== "undefined") {
+							if (typeof lineItem.ptoRequest.requestor !== "undefined") {
+								eventObj.title =  lineItem.ptoRequest.requestor.fullName + " : " + lineItem.compensation;
+								if (lineItem.compensation === "Paid Time Off") {
+									eventObj.title += " : " + lineItem.hoursRequested;
+								}
+								eventObj.start = formatDateForCalendar(lineItem.dateRequested);
+								eventArray.push(eventObj);
 							}
-							eventObj.start = formatDateForCalendar(lineItem.dateRequested);
-							eventArray.push(eventObj);
 						}
 					});
 					
 					
-					logout();
+					//logout();
+					sessionRef.unPromote(promoteToken); //put the session back to normal.
 					return eventArray;
 					
-				}
-				//sessionRef.unPromote(promoteToken); //put the session back to normal.
+				//}
+				
 				
 				
 			}// @startlock
@@ -321,15 +324,18 @@ guidedModel =// @startlock
 		{
 			onRestrictingQuery:function()
 			{// @endlock
+				var myCurrentUser = currentUser(); // Get the current user
+				var sessionRef = currentSession(); // Get session.
 				var result = ds.PTO_Request.createEntityCollection();
 				/**/
-				if (currentUser().name === "admin") {
+				//if (currentUser().name === "admin") {
+				if (currentSession().belongsTo("Administrator")) {
 					result = ds.PTO_Request.all();
 				
 				} else {
 					//Load User entity.
-					var myCurrentUser = currentUser(); // Get the current user
-					var sessionRef = currentSession(); // Get session.
+					//var myCurrentUser = currentUser(); // Get the current user
+					//var sessionRef = currentSession(); // Get session.
 					var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.	
 					var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity.
 					sessionRef.unPromote(promoteToken); //put the session back to normal.

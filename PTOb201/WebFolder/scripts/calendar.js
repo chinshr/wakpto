@@ -19,23 +19,25 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 		];
 		*/
 		
-		myEvents = waf.ds.RequestLineItem.getCalendarArray();
+		waf.ds.RequestLineItem.getCalendarArray({
+			onSuccess: function(event) {
+				$('#calendar').fullCalendar({
+       				 // put your options and callbacks here
+       				height: 650,
+        			weekends: false, // will hide Saturdays and Sundays
+        			events: event.result
+			        /*
+			        events: [
+			        	{title  : 'event1', start  : '2012-08-01'},
+			        	{title  : 'event2', start  : '2012-09-05'},
+			        ]
+			        */
+				})
+			}
+		});
 		
 		// Init Full Calendar
-	 	$('#calendar').fullCalendar({
-        // put your options and callbacks here
-        height: 650,
-        //weekends: false // will hide Saturdays and Sundays
-        
-        
-        events: myEvents
-        /*
-        events: [
-        	{title  : 'event1', start  : '2012-08-01'},
-        	{title  : 'event2', start  : '2012-09-05'},
-        ]
-        */
-	})
+	 	
 
 	};// @lock
 
