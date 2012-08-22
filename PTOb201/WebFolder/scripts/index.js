@@ -21,12 +21,13 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 	var documentEvent = {};	// @document
 // @endregion// @endlock
 
-
 //David Robbins Functions - Start
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth()+1; //January is 0!
-var yyyy = today.getFullYear();
+var currentUserIsManagement = false,
+	currentUserIsEmployee = false,
+	today = new Date(),
+	dd = today.getDate(),
+	mm = today.getMonth()+1, //January is 0!
+	yyyy = today.getFullYear();
 if(dd<10){dd='0'+dd} 
 if(mm<10){mm='0'+mm}
 var myCurrentDate = mm+'/'+dd+'/'+yyyy;
@@ -154,9 +155,7 @@ function disableInput() {
 	//$('#container5').html('');
 	//$('#container6').html('');
 	/**/
-	if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
-		(WAF.directory.currentUserBelongsTo("Manager")) ||
-		(WAF.directory.currentUserBelongsTo("Administrator"))) {
+	if (currentUserIsManagement) {
 		
 		currentPTOUserName = WAF.sources.pTO_Request.getAttribute("requestor.fullName").getValue();
 		
@@ -397,6 +396,7 @@ function signIn() {
 		if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
 			(WAF.directory.currentUserBelongsTo("Manager")) ||
 			(WAF.directory.currentUserBelongsTo("Administrator"))) {
+			currentUserIsManagement = true;
 			statusArray.push({statusName: ''});
 			statusArray.push({statusName: 'pending'});
 			statusArray.push({statusName: 'commit'});
@@ -405,6 +405,7 @@ function signIn() {
 			//statusArray.push({statusName: 'returned'});
 			statusArray.push({statusName: 'closed'});
 		} else if (WAF.directory.currentUserBelongsTo("Employee")) {
+			currentUserIsEmployee = true;
 			statusArray.push({statusName: ''});
 			statusArray.push({statusName: 'pending'});
 			statusArray.push({statusName: 'commit'});
@@ -485,9 +486,7 @@ function handleEmailMessageDialog() {
 
 	pTO_RequestEvent.onCurrentElementChange = function pTO_RequestEvent_onCurrentElementChange (event)// @startlock
 	{// @endlock
-		if (!((WAF.directory.currentUserBelongsTo("Payroll")) || 
-			(WAF.directory.currentUserBelongsTo("Manager")) ||
-			(WAF.directory.currentUserBelongsTo("Administrator")))) {
+		if (!currentUserIsManagement) {
 			
 			if ((waf.sources.pTO_Request.status !== "pending") && (waf.sources.pTO_Request.status !== "commit")) {
 				$$('combobox2').hide();
@@ -519,6 +518,8 @@ function handleEmailMessageDialog() {
 		//signout
 		$("#errorDiv1").html("");
 		if (WAF.directory.logout()) {
+			currentUserIsManagement = false;
+			currentUserIsEmployee = false;
 			//reset status array
 			statusArray = [];
 			WAF.sources.statusArray.sync();
