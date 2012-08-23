@@ -267,10 +267,10 @@ guidedModel =// @startlock
 				var statusArray = [];
 				
 				if (currentSession().belongsTo("Payroll") || currentSession().belongsTo("Manager") || currentSession().belongsTo("Administrator")) {
-					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "commit"}, {statusName: "approved"}, {statusName: "returned"}];
+					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "requested"}, {statusName: "approved"}, {statusName: "returned"}];
 				} else if (currentSession().belongsTo("Employee")) {
-					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "commit"}];
-					if ((this.status !== "pending") && (this.status !== "commit")) {
+					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "requested"}];
+					if ((this.status !== "pending") && (this.status !== "requested")) {
 						var myNewStatusObj = {statusName: ""};
 						myNewStatusObj.statusName = this.status;
 						statusArray.push(myNewStatusObj);
@@ -281,7 +281,7 @@ guidedModel =// @startlock
 				
 				
 				//var statusArray = [];
-				//statusArray = [{statusName: "VV"}, {statusName: "pending"}, {statusName: "commit"}];
+				//statusArray = [{statusName: "VV"}, {statusName: "pending"}, {statusName: "requested"}];
 				//return {dave: "robbins"};
 				//return statusArray;
 				//return this.status;
@@ -305,9 +305,9 @@ guidedModel =// @startlock
 				var statusArray = [];
 				
 				if (currentSession().belongsTo("Payroll") || currentSession().belongsTo("Manager") || currentSession().belongsTo("Administrator")) {
-					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "commit"}, {statusName: "approved"}, {statusName: "returned"}];
+					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "requested"}, {statusName: "approved"}, {statusName: "returned"}];
 				} else if  (currentSession().belongsTo("Employee")) {
-					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "commit"}];
+					statusArray = [{statusName: ""}, {statusName: "pending"}, {statusName: "requested"}];
 				}
 				
 				//return [{statusName: ""}, {statusName: "pending"}, {statusName: "commmit"}, {statusName: "approved"}];
@@ -408,7 +408,7 @@ guidedModel =// @startlock
 				/**/
 				//Employee send email to manager for approval.
 				if ((myUser !== null) && (!this.isNew())) {
-					if ((this.status === "commit") && (oldEntity.status !== "commit")) {
+					if ((this.status === "requested") && (oldEntity.status !== "requested")) {
 						//Put request line items in an array.
 						var requestLineItemsArray = [];
 						var lineItems = this.requestLineItemCollection;
@@ -449,14 +449,14 @@ guidedModel =// @startlock
 							date: new Date(),
 							pto: this
 						}).save();
-					}//((this.status === "commit") && (oldEntity.status !== "commit"))
+					}//((this.status === "requested") && (oldEntity.status !== "requested"))
 					
 					//Manager send email to employee
 					var sendEmaiToManager = false;
-					if ((this.status === "approved") && (oldEntity.status === "commit")) {
+					if ((this.status === "approved") && (oldEntity.status === "requested")) {
 						sendEmaiToManager = true;
 					}
-					if ((this.status === "rejected") && (oldEntity.status === "commit")) {
+					if ((this.status === "rejected") && (oldEntity.status === "requested")) {
 						sendEmaiToManager = true;
 					}
 					//if ((this.status === "approved") && (oldEntity.status !== "approved")) {
@@ -603,7 +603,7 @@ guidedModel =// @startlock
 						return err;
 					}
 					
-					if (!((this.status === "pending") || (this.status === "commit"))) {
+					if (!((this.status === "pending") || (this.status === "requested"))) {
 						err = { error : 2006, errorMessage: "Invalid status."};
 						return err;
 					}
@@ -661,7 +661,7 @@ guidedModel =// @startlock
 								return err;	
 							} else { 
 								//current status is pending
-								if (this.status !== "commit") {
+								if (this.status !== "requested") {
 									err = { error : 2007, errorMessage: "You do not have permission to change the status."};
 									return err;	
 								} 
