@@ -69,15 +69,15 @@ function savePTORequest(message) {
 			}
 			/**/
 			WAF.sources.pTO_Request.query(
-				"status !== :1", "closed",
+				"status !== :1 order by firstDayOff", "closed",
 				{
 				onSuccess: function (event) {
-					console.log("saved pto. primary key: " + primKey);
-					console.log("id: " + WAF.sources.pTO_Request.ID + " status: " + WAF.sources.pTO_Request.status);
+					//console.log("saved pto. primary key: " + primKey);
+					//console.log("id: " + WAF.sources.pTO_Request.ID + " status: " + WAF.sources.pTO_Request.status);
 					
 					WAF.sources.pTO_Request.selectByKey(primKey, {
 						onSuccess: function(event) {
-							console.log("id: " + WAF.sources.pTO_Request.ID + " status: " + WAF.sources.pTO_Request.status);
+							//console.log("id: " + WAF.sources.pTO_Request.ID + " status: " + WAF.sources.pTO_Request.status);
 							currentPTOPrimaryKey = primKey;
 							createEmailAccordian();
 							disableInput();
@@ -191,14 +191,11 @@ function disableInput() {
 	//$('#container5').html('');
 	//$('#container6').html('');
 	/**/
-	console.log("disableInput called");
 	
 	if (currentUserIsManagement) {
-		console.log("disableInput currentUserIsManagement");
 		currentPTOUserName = WAF.sources.pTO_Request.getAttribute("requestor.fullName").getValue();
 		if (WAF.directory.currentUser().fullName !== currentPTOUserName) {
 		//Manager is looking at Employee request.
-			//console.log("Employee request: " + currentPTOUserName + " for Manager: " + WAF.directory.currentUser().fullName);
 			$("#textField3").attr("disabled", "disabled"); //First Day Off
 			$("#textField4").attr("disabled", "disabled"); //Last Day Off
 			$("#textField5").attr("disabled", "disabled"); //Return To Work Date
@@ -246,8 +243,6 @@ function disableInput() {
 		
 	} else {
 		//Employee
-		console.log("disableInput Employee");
-		console.log(WAF.sources.pTO_Request.status);
 		$("#textField3").attr("disabled", "disabled"); //First Day Off
 		$("#textField4").attr("disabled", "disabled"); //Last Day Off
 		$("#textField5").attr("disabled", "disabled"); //Return To Work Date
@@ -479,7 +474,8 @@ function signIn() {
 		
 		//WAF.sources.pTO_Request.query("status !== :1", "closed");
 		WAF.sources.pTO_Request.query(
-			"status !== :1", "closed",
+			"status !== :1 order by firstDayOff", "closed", 
+			//"status !== 'closed' orderBy firstDayOff",
 			{
 			onSuccess: function(event) {
 				disableInput();
@@ -553,7 +549,8 @@ function handleEmailMessageDialog() {
 		//$$('instuctionsRichText').setValue("");
 		var primKey = WAF.sources.pTO_Request.ID;
 		WAF.sources.pTO_Request.query(
-			"status !== :1", "closed",
+			"status !== :1 order by firstDayOff", "closed",
+			//"status !== 'closed' orderBy firstDayOff",
 			{onSuccess: function (event) {
 				//WAF.sources.pTO_Request.selectByKey(primKey);
 				WAF.sources.pTO_Request.selectByKey(currentPTOPrimaryKey);
@@ -718,7 +715,7 @@ function handleEmailMessageDialog() {
 
 	button22.click = function button22_click (event)// @startlock
 	{// @endlock
-		$$('dialog3').closeDialog(); //cancel button
+		$$('dialog3').sialog(); //cancel button
 	};// @lock
 
 	button21.click = function button21_click (event)// @startlock
@@ -771,7 +768,8 @@ function handleEmailMessageDialog() {
 			$$("signOutContainer").hide();
 		} else {
 			WAF.sources.pTO_Request.query(
-				"status !== :1", "closed",
+				"status !== :1 order by firstDayOff", "closed",
+				//"status !== 'closed' orderBy firstDayOff",
 				{
 				onSuccess: function(event) {
 					disableInput();
