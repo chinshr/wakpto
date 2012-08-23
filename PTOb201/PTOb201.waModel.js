@@ -553,6 +553,11 @@ guidedModel =// @startlock
 						return err;	
 					}
 					
+					if (this.status === "pending") {
+						err = { error : 4012, errorMessage: "You cannot change an employee request to pending."};
+						return err;	
+					}
+					
 					if (this.firstDayOff === null) {
 						err = { error : 4010, errorMessage: "You do not have permission to update the First Day Off field value."};
 						return err;	
