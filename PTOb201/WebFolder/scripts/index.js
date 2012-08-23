@@ -55,16 +55,12 @@ function savePTORequest(message) {
 	}
 	
 	var primKey = WAF.sources.pTO_Request.ID;
-	//$("#errorDiv1").html("");
 	WAF.sources.pTO_Request.save({
-        	onSuccess: function(event) {
+    	onSuccess: function(event) {
 			updateUserAccountDisplay();
 			if (event.dataSource.status === "requested") {
-				//$("#errorDiv1").html("PTO Request Saved. An email has been sent to your manager.");
 				setMessageValue("PTO Request Saved. An email has been sent to your manager.");
 			} else {
-				//$("#errorDiv1").html("PTO Request Saved.");
-				//Double-click line-items to update PTO request.
 				setMessageValue("PTO Request Saved.");
 			}
 			/**/
@@ -72,28 +68,16 @@ function savePTORequest(message) {
 				"status !== :1 order by firstDayOff", "closed",
 				{
 				onSuccess: function (event) {
-					//console.log("saved pto. primary key: " + primKey);
-					//console.log("id: " + WAF.sources.pTO_Request.ID + " status: " + WAF.sources.pTO_Request.status);
-					
 					WAF.sources.pTO_Request.selectByKey(primKey, {
 						onSuccess: function(event) {
-							//console.log("id: " + WAF.sources.pTO_Request.ID + " status: " + WAF.sources.pTO_Request.status);
 							currentPTOPrimaryKey = primKey;
 							createEmailAccordian();
 							disableInput();
 						}
 					});
-					/*
-					WAF.sources.pTO_Request.selectByKey(primKey);
-					console.log("id: " + WAF.sources.pTO_Request.ID + " status: " + WAF.sources.pTO_Request.status);
-					currentPTOPrimaryKey = primKey;
-					createEmailAccordian();
-					disableInput();
-					*/
 			}});	
 		},
            	onError: function(error) {
-           		//$('#errorDiv1').html(error['error'][0].message + " (" + error['error'][0].errCode + ")");
            		setMessageValue(error['error'][0].message + " (" + error['error'][0].errCode + ")", true);
            		//Ask Laurent if serverRefresh supports declareDependencies or autoExpand.
            		WAF.sources.pTO_Request.serverRefresh({forceReload: true});
