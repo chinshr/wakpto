@@ -359,28 +359,18 @@ guidedModel =// @startlock
 			},// @startlock
 			onSave:function()
 			{// @endlock
-				var myCurrentUser = currentUser(); // Get the current user
-				var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity.
-				var the4DHolidays = ds.Holiday.all();
-				var numberOf4DHolidays = the4DHolidays.length;
-				var myDayPointer = this.firstDayOff;
-				var myLastDay = this.lastDayOff;
-				var theDayNumber;
-				var hours;
-				
-				var theClass = this.getDataClass(); //get the dataclass of the entity to save
-				var theClassName = theClass.getName(); //get the dataclass name
-				var oldEntity = theClass(this.getKey()); //find the same entity on disk
-				
-				/*
-				dateCompare = dates.compare(firstDayOff, currentDate);
-						if (dateCompare < 0) {
-							
-				+
-				*/
-				
+				var myCurrentUser = currentUser(), // Get the current user
+				myUser = ds.User.find("ID = :1", myCurrentUser.ID), // Load their user entity.
+				the4DHolidays = ds.Holiday.all(),
+				numberOf4DHolidays = the4DHolidays.length,
+				myDayPointer = this.firstDayOff,
+				myLastDay = this.lastDayOff,
+				theDayNumber,
+				hours,
+				theClass = this.getDataClass(), //get the dataclass of the entity to save
+				theClassName = theClass.getName(), //get the dataclass name
+				oldEntity = theClass(this.getKey()), //find the same entity on disk
 				vacationDateCompare = dates.compare(this.firstDayOff, this.lastDayOff);
-				
 				
 				if ((myUser !== null) && (this.isNew())) {
 					//if (myLastDay != null) {
@@ -395,7 +385,10 @@ guidedModel =// @startlock
 					} else { //Requesting One Day Off.
 						theDayNumber = myDayPointer.getDay();
 						if ((theDayNumber > 0) && (theDayNumber < 6) && (!is4DHoliday(myDayPointer))){
-								addPTOLineItem(this, myUser, myDayPointer);
+							addPTOLineItem(this, myUser, myDayPointer);
+						} else {
+							//can i reject this
+							return {error: 10455, errorMessage: "You don't need to request PTO. This day is a holiday."};
 						}
 					} //(myLastDay != null)
 				}//(myUser !== null)				
@@ -432,15 +425,6 @@ guidedModel =// @startlock
 								notes: this.emailText
 								//requestLineItems: [{name: "dave"}, {name: "tom"}, {name: "bill"}]
 						});
-						
-						/*
-						if (this.notes === null) {
-							this.notes = "";
-						}
-						this.notes += formatDate(new Date()) + " " + myUser.fullName;
-						this.notes += this.emailText;
-						//this.notes = "";
-						*/
 						
 						new ds.Note({ 
 							date: new Date(),
@@ -530,6 +514,7 @@ guidedModel =// @startlock
 			},// @startlock
 			onValidate:function()
 			{// @endlock
+				//is4DHoliday
 				var err;
 				var theClass = this.getDataClass(); //get the dataclass of the entity to save
 				var theClassName = theClass.getName(); //get the dataclass name
@@ -537,6 +522,7 @@ guidedModel =// @startlock
 				var sessionRef = currentSession(); // Get session.
 				var myCurrentUser = currentUser(); // Get the current user.
 				var myUserV = ds.User.find("ID = :1", myCurrentUser.ID);
+				
 				
 				if (sessionRef.belongsTo("Administrator")) {
 					err = { error : 3099, errorMessage: "The Administrator is not allowed to update PTO requests."};
@@ -709,6 +695,15 @@ guidedModel =// @startlock
 					
 					//Only for new requests
 					if (this.isNew()) {
+						//Requesting One Day and it's a holiday?
+						dateCompare = dates.compare(firstDayOff, currentDate);
+						if (dateCompare === 0) {
+							if (is4DHoliday(firstDayOff)) {
+								err = { error : 2065, errorMessage: "You don't need to take PTO. This day is a holiday." };
+								return err;	
+							}
+						}
+						
 						//Has the first day requested already past?
 						dateCompare = dates.compare(firstDayOff, currentDate);
 						if (dateCompare < 0) {
