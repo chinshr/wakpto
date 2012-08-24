@@ -341,7 +341,8 @@ guidedModel =// @startlock
 					sessionRef.unPromote(promoteToken); //put the session back to normal.
 					
 					if (myUser !== null) {
-						if (myUser.accessLevel < 4) {
+						//if (myUser.accessLevel < 4) {
+						if (myUser.role === "Manager" || myUser.role === "Payroll") {
 							result = ds.PTO_Request.query("requestor.myManager.login = :1 and status !== :2", myCurrentUser.name, "pending");
 							theManagerPTOs = ds.PTO_Request.query("requestor.login = :1", currentUser().name);
 							result = result.add(theManagerPTOs);
