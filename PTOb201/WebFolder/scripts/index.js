@@ -35,15 +35,15 @@ var myCurrentDate = mm+'/'+dd+'/'+yyyy;
 
 function setMessageValue(message, error) {
 	if (arguments.length === 0) {
-		$$('messagesRichText').setTextColor("#4C4C4C");
+		$$('messagesRichText').setTextColor("#153E7E");
 		message = "";
 	} else if (arguments.length === 1) {
-		$$('messagesRichText').setTextColor("#4C4C4C");
+		$$('messagesRichText').setTextColor("#153E7E");
 	} else if (arguments.length === 2) {
 		$$('messagesRichText').setTextColor("red");
 		//$('#messagesRichText').css("color", "red");
 	} else {
-		$$('messagesRichText').setTextColor("#4C4C4C");
+		$$('messagesRichText').setTextColor("#153E7E");
 	}
 	
 	$$('messagesRichText').setValue(message);
@@ -60,6 +60,8 @@ function savePTORequest(message) {
 			updateUserAccountDisplay();
 			if (event.dataSource.status === "requested") {
 				setMessageValue("PTO Request Saved. An email has been sent to your manager.");
+			} else if (event.dataSource.status === "pending") {
+				setMessageValue("PTO Request Saved. Double-click line-items to update PTO request.");
 			} else {
 				setMessageValue("PTO Request Saved.");
 			}
