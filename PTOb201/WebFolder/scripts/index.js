@@ -174,11 +174,11 @@ function enableInput() {
 }
 
 function disableInput() { 
-	//$('#container5').html('');
-	//$('#container6').html('');
-	/**/
-	
-	if (currentUserIsManagement) {
+	//if (currentUserIsManagement) {
+	if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
+		(WAF.directory.currentUserBelongsTo("Manager")) ||
+		(WAF.directory.currentUserBelongsTo("Administrator")))
+	{
 		currentPTOUserName = WAF.sources.pTO_Request.getAttribute("requestor.fullName").getValue();
 		if (WAF.directory.currentUser().fullName !== currentPTOUserName) {
 		//Manager is looking at Employee request.
@@ -196,9 +196,7 @@ function disableInput() {
 				$$("combobox2").disable(); //status
 			} else {
 				$$("combobox2").enable(); //status
-			}
-			
-						
+			}			
 		} else {
 		//Manager is looking at their own request.
 			if (WAF.sources.pTO_Request.status !== "pending") {
@@ -220,13 +218,7 @@ function disableInput() {
 			$("#textField3").attr("disabled", "disabled"); //First Day Off
 			$("#textField4").attr("disabled", "disabled"); //Last Day Off
 			$("#textField5").attr("disabled", "disabled"); //Return To Work Date
-		
-			//$("#textField3").removeAttr("disabled"); //First Day Off
-			//$("#textField4").removeAttr("disabled"); //Last Day Off
-			//$("#textField5").removeAttr("disabled"); //Return To Work Date
-			//$("#textField8").removeAttr("disabled"); //Notes
 		}
-		
 	} else {
 		//Employee
 		$("#textField3").attr("disabled", "disabled"); //First Day Off
@@ -512,8 +504,16 @@ function handleEmailMessageDialog() {
 
 	pTO_RequestEvent.onCurrentElementChange = function pTO_RequestEvent_onCurrentElementChange (event)// @startlock
 	{// @endlock
-		if (!currentUserIsManagement) {
+		//if (!currentUserIsManagement) {
 			
+		if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
+		(WAF.directory.currentUserBelongsTo("Manager")) ||
+		(WAF.directory.currentUserBelongsTo("Administrator")))
+		{
+			$$('combobox2').show();
+			$$('textField10').hide();
+		
+		} else {
 			if ((waf.sources.pTO_Request.status !== "pending") && (waf.sources.pTO_Request.status !== "requested")) {
 				$$('combobox2').hide();
 				$$('textField10').show();
@@ -521,9 +521,6 @@ function handleEmailMessageDialog() {
 				$$('combobox2').show();
 				$$('textField10').hide();
 			}
-		} else {
-			$$('combobox2').show();
-			$$('textField10').hide();
 		}
 	};// @lock
 
