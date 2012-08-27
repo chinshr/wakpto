@@ -173,20 +173,14 @@ function enableInput() {
 	$$("button7").enable();
 }
 
-function disableInput() { 
-	//if (currentUserIsManagement) {
-	if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
-		(WAF.directory.currentUserBelongsTo("Manager")) ||
-		(WAF.directory.currentUserBelongsTo("Administrator")))
-	{
+function disableInput() {
+	if (currentUserIsManagement) { 
 		currentPTOUserName = WAF.sources.pTO_Request.getAttribute("requestor.fullName").getValue();
 		if (WAF.directory.currentUser().fullName !== currentPTOUserName) {
 		//Manager is looking at Employee request.
 			$("#textField3").attr("disabled", "disabled"); //First Day Off
 			$("#textField4").attr("disabled", "disabled"); //Last Day Off
 			$("#textField5").attr("disabled", "disabled"); //Return To Work Date
-			//$("#textField8").attr("disabled", "disabled"); //Notes
-			
 			$$("button6").disable();
 			$$("button7").disable();
 			$$("combobox1").disable();
@@ -220,7 +214,7 @@ function disableInput() {
 			$("#textField5").attr("disabled", "disabled"); //Return To Work Date
 		}
 	} else {
-		//Employee
+		//Employee is signed in
 		$("#textField3").attr("disabled", "disabled"); //First Day Off
 		$("#textField4").attr("disabled", "disabled"); //Last Day Off
 		$("#textField5").attr("disabled", "disabled"); //Return To Work Date
@@ -401,14 +395,14 @@ function createEmailAccordian() {
 }
 
 function signIn() {
-	//$("#errorDiv1").html("");
 	setMessageValue("");
 	$$("signInError").setValue("");
 	if (WAF.directory.loginByPassword(WAF.sources.loginObject.loginName, WAF.sources.loginObject.password)) {
 		statusArray = [];
 		if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
 			(WAF.directory.currentUserBelongsTo("Manager")) ||
-			(WAF.directory.currentUserBelongsTo("Administrator"))) {
+			(WAF.directory.currentUserBelongsTo("Administrator"))) 
+		{
 			currentUserIsManagement = true;
 			statusArray.push({statusName: ''});
 			statusArray.push({statusName: 'pending'});
@@ -504,12 +498,7 @@ function handleEmailMessageDialog() {
 
 	pTO_RequestEvent.onCurrentElementChange = function pTO_RequestEvent_onCurrentElementChange (event)// @startlock
 	{// @endlock
-		//if (!currentUserIsManagement) {
-			
-		if ((WAF.directory.currentUserBelongsTo("Payroll")) || 
-		(WAF.directory.currentUserBelongsTo("Manager")) ||
-		(WAF.directory.currentUserBelongsTo("Administrator")))
-		{
+		if (currentUserIsManagement) {
 			$$('combobox2').show();
 			$$('textField10').hide();
 		
@@ -527,9 +516,7 @@ function handleEmailMessageDialog() {
 	button1.click = function button1_click (event)// @startlock
 	{// @endlock
 		//Cancel Changes to PTO Request
-		//$('#errorDiv1').html("");
 		setMessageValue("");
-		//$$('instuctionsRichText').setValue("");
 		var primKey = WAF.sources.pTO_Request.ID;
 		WAF.sources.pTO_Request.query(
 			"status !== :1 order by firstDayOff", "closed",
@@ -545,9 +532,7 @@ function handleEmailMessageDialog() {
 	button24.click = function button24_click (event)// @startlock
 	{// @endlock
 		//signout
-		//$("#errorDiv1").html("");
 		setMessageValue("");
-		//$$('instuctionsRichText').setValue("");
 		if (WAF.directory.logout()) {
 			currentUserIsManagement = false;
 			currentUserIsEmployee = false;
