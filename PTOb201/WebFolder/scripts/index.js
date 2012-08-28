@@ -77,7 +77,8 @@ function savePTORequest(message) {
 							disableInput();
 						}
 					});
-			}});	
+				}
+			});	
 		},
            	onError: function(error) {
            		setMessageValue(error['error'][0].message + " (" + error['error'][0].errCode + ")", true);
@@ -162,6 +163,19 @@ function updateUserAccountDisplay() {
 			$('#container6').html('User Account: <br/><br/>' + myHTML);
 		}
 	}); // Load their user entity.
+}
+
+function updateHolidayDisplay() {
+	ds.Holiday.all({orderBy:"date", onSuccess:function(event) {
+		event.entityCollection.toArray("name,date", {onSuccess: function(ev) {
+			var arr = ev.result;
+			var myHTML = '';
+			arr.forEach(function(elem) { 
+				myHTML += '<p class="holiday">' + elem.name + " : " + formatDate(ISOToDate(elem.date)) + '</p>';
+			});
+			$('#container5').html('Upcoming 4D Holidays: ' + myHTML);
+		}});
+	}});
 }
 
 function enableInput() {
@@ -427,27 +441,14 @@ function signIn() {
 		$("#container7").css("top", "-1px");
 		$$("container7").hide();
 		
-		//Load User Account Display
 		updateUserAccountDisplay();
-		
-		ds.Holiday.all({orderBy:"date", onSuccess:function(event) {
-			event.entityCollection.toArray("name,date", {onSuccess: function(ev) {
-				var arr = ev.result;
-				var myHTML = '';
-				arr.forEach(function(elem) { 
-					myHTML += '<p class="holiday">' + elem.name + " : " + formatDate(ISOToDate(elem.date)) + '</p>';
-				});
-				$('#container5').html('Upcoming 4D Holidays:  <br/><br/>' + myHTML);
-			}});
-		}});
+		updateHolidayDisplay();
 		
 		$$("textField1").setValue("");
 		$$("textField2").setValue("");
 		
-		//WAF.sources.pTO_Request.query("status !== :1", "closed");
 		WAF.sources.pTO_Request.query(
 			"status !== :1 order by firstDayOff", "closed", 
-			//"status !== 'closed' orderBy firstDayOff",
 			{
 			onSuccess: function(event) {
 				disableInput();
@@ -712,8 +713,6 @@ function handleEmailMessageDialog() {
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		WAF.sources.pTO_Request.declareDependencies("requestor");
-		//WAF.sources.pTO_Request.all();
-		//WAF.sources.pTO_Request.query("status !== :1", "closed");
 		
 		//$("#errorDiv1").html("");
 		setMessageValue("");
@@ -735,9 +734,9 @@ function handleEmailMessageDialog() {
 			$$("signInContainer").show();
 			$$("signOutContainer").hide();
 		} else {
+			//We have a user signed in.
 			WAF.sources.pTO_Request.query(
 				"status !== :1 order by firstDayOff", "closed",
-				//"status !== 'closed' orderBy firstDayOff",
 				{
 				onSuccess: function(event) {
 					disableInput();
@@ -748,6 +747,9 @@ function handleEmailMessageDialog() {
 		
 			//Closed PTOs.
 			waf.sources.pTO_Request1.query("status = :1", "closed");
+			
+			updateUserAccountDisplay();
+			updateHolidayDisplay();
 		
 			$$("richText2").setValue("Signed in as : " + WAF.directory.currentUser().fullName);
 			$$("container1").show();
