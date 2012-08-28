@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var image2 = {};	// @image
 	var dataGrid2 = {};	// @dataGrid
 	var button12 = {};	// @button
 	var button5 = {};	// @button
@@ -22,7 +23,8 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 // @endregion// @endlock
 
 //David Robbins Functions - Start
-var currentUserIsManagement = false,
+var buildCalendar = true,
+	currentUserIsManagement = false,
 	currentUserIsEmployee = false,
 	today = new Date(),
 	currentPTOPrimaryKey = -1,
@@ -475,6 +477,36 @@ function handleEmailMessageDialog() {
 
 // eventHandlers// @lock
 
+	image2.click = function image2_click (event)// @startlock
+	{// @endlock
+		if (!(WAF.directory.currentUser() === null)) {
+			if (buildCalendar) {
+				//$('#calendar').fullCalendar('removeEvents');
+				waf.ds.RequestLineItem.getCalendarArray({
+					onSuccess: function(event) {
+						$('#calendar').fullCalendar({
+		       				 // put your options and callbacks here
+		       				height: 520,
+		        			weekends: true, // will hide Saturdays and Sundays
+		        			events: event.result
+						})
+					}
+				});
+				
+				buildCalendar = false;
+			} 
+			var calendarTopPostion = $("#calendarContainer").css("top");
+			console.log(calendarTopPostion);
+			if (calendarTopPostion === "-1px") {
+				$("#calendarContainer").css("top", "60px");
+				$$("calendarContainer").show();
+			} else {
+				$$("calendarContainer").hide();
+				$("#calendarContainer").css("top", "-1px");
+			}
+		}
+	};// @lock
+
 	dataGrid2.onRowClick = function dataGrid2_onRowClick (event)// @startlock
 	{// @endlock
 		currentPTOPrimaryKey = WAF.sources.pTO_Request.ID;
@@ -551,6 +583,9 @@ function handleEmailMessageDialog() {
 			$("#container7").css("left", "0px");
 			$("#container7").css("top", "80px");
 			$$("container7").show();
+			
+			$$("calendarContainer").hide();
+			$("#calendarContainer").css("top", "-1px");
 		}
 	};// @lock
 
@@ -723,6 +758,9 @@ function handleEmailMessageDialog() {
 		$$("textField14").disable(); //request line item date
 		$("#textField8").attr("disabled", "disabled"); //Notes
 		
+		$$("calendarContainer").hide();
+		$("#calendarContainer").css("top", "-1px");
+		
 		if (WAF.directory.currentUser() === null) {
 			WAF.sources.pTO_Request.setEntityCollection();
 			WAF.sources.pTO_Request1.setEntityCollection();
@@ -797,9 +835,12 @@ function handleEmailMessageDialog() {
 		});
 		
 		//$('dd').hide();	
+		$('#image2').css('opacity', .6);
+		
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("image2", "click", image2.click, "WAF");
 	WAF.addListener("dataGrid2", "onRowClick", dataGrid2.onRowClick, "WAF");
 	WAF.addListener("button12", "click", button12.click, "WAF");
 	WAF.addListener("button5", "click", button5.click, "WAF");
