@@ -2,7 +2,6 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
-	var button2 = {};	// @button
 	var dataGrid2 = {};	// @dataGrid
 	var button12 = {};	// @button
 	var button5 = {};	// @button
@@ -24,6 +23,7 @@ WAF.onAfterInit = function onAfterInit() {// @lock
 
 //David Robbins Functions - Start
 var buildCalendar = true,
+	displayCalendarDialog = true,
 	currentUserIsManagement = false,
 	currentUserIsEmployee = false,
 	buildCalendar = true,
@@ -436,7 +436,7 @@ function signIn() {
 		}
 		WAF.sources.statusArray.sync();
 		
-		
+		$('#calendarButton').show();
 		$$("richText2").setValue("Signed in as : " + WAF.directory.currentUser().fullName);
 		$$("signInContainer").hide();
 		$$("signOutContainer").show();
@@ -477,33 +477,6 @@ function handleEmailMessageDialog() {
 
 
 // eventHandlers// @lock
-
-	button2.click = function button2_click (event)// @startlock
-	{// @endlock
-		//Calendar
-		if (!(WAF.directory.currentUser() === null)) {
-			if (buildCalendar) {
-				//$('#calendar').fullCalendar('removeEvents');
-				waf.ds.RequestLineItem.getCalendarArray({
-					onSuccess: function(event) {
-						$('#calendar').fullCalendar({
-		       				 // put your options and callbacks here
-		       				height: 408,
-		        			weekends: true, // will hide Saturdays and Sundays
-		        			events: event.result
-						})
-					}
-				});
-				
-				buildCalendar = false;
-			} 
-		}
-		
-		$('#dialog2').css("top", 100);
-		$('#dialog2').css("left", 200);
-		WAF.widgets['dialog2'].displayDialog();
-		
-	};// @lock
 
 	dataGrid2.onRowClick = function dataGrid2_onRowClick (event)// @startlock
 	{// @endlock
@@ -574,6 +547,7 @@ function handleEmailMessageDialog() {
 			WAF.sources.pTO_Request.setEntityCollection();
 			WAF.sources.pTO_Request1.setEntityCollection();
 			
+			$('#calendarButton').hide();
 			$$("richText2").setValue("");
 			$$("signOutContainer").hide();
 			$$("signInContainer").show();
@@ -763,6 +737,7 @@ function handleEmailMessageDialog() {
 			$$("container7").show();
 			$$("signInContainer").show();
 			$$("signOutContainer").hide();
+			$('#calendarButton').hide();
 		} else {
 			//We have a user signed in.
 			WAF.sources.pTO_Request.query(
@@ -787,6 +762,7 @@ function handleEmailMessageDialog() {
 			$$("container7").hide();
 			$$("signInContainer").hide();
 			$$("signOutContainer").show();
+			$('#calendarButton').show();
 		}
 		
 		/**/
@@ -827,12 +803,43 @@ function handleEmailMessageDialog() {
 		});
 		
 		//$('dd').hide();	
-		$('#image2').css('opacity', .6);
+		
+		$('#calendarButton').on('click', function() {
+			//Calendar
+			if (!(WAF.directory.currentUser() === null)) {
+				if (buildCalendar) {
+					//$('#calendar').fullCalendar('removeEvents');
+					waf.ds.RequestLineItem.getCalendarArray({
+						onSuccess: function(event) {
+							$('#calendar').fullCalendar({
+			       				 // put your options and callbacks here
+			       				height: 408,
+			        			weekends: true, // will hide Saturdays and Sundays
+			        			events: event.result
+							})
+						}
+					});
+					
+					buildCalendar = false;
+				} 
+			}
+			
+			if (displayCalendarDialog) {
+				$('#dialog2').css("top", 100);
+				$('#dialog2').css("left", 200);
+				WAF.widgets['dialog2'].displayDialog();
+				displayCalendarDialog = false;
+			} else {
+				WAF.widgets['dialog2'].closeDialog();
+				displayCalendarDialog = true;
+			}
+		});//end calendarButton event handler
+		
+		
 		
 	};// @lock
 
 // @region eventManager// @startlock
-	WAF.addListener("button2", "click", button2.click, "WAF");
 	WAF.addListener("dataGrid2", "onRowClick", dataGrid2.onRowClick, "WAF");
 	WAF.addListener("button12", "click", button12.click, "WAF");
 	WAF.addListener("button5", "click", button5.click, "WAF");
