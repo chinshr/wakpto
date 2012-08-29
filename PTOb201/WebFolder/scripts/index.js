@@ -2,6 +2,7 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var calendarButton = {};	// @button
 	var dataGrid2 = {};	// @dataGrid
 	var button12 = {};	// @button
 	var button5 = {};	// @button
@@ -478,6 +479,29 @@ function handleEmailMessageDialog() {
 
 // eventHandlers// @lock
 
+	calendarButton.click = function calendarButton_click (event)// @startlock
+	{// @endlock
+		//Calendar
+		if (!(WAF.directory.currentUser() === null)) {
+			$('#calendar').fullCalendar('removeEvents');
+			waf.ds.RequestLineItem.getCalendarArray({
+				onSuccess: function(event) {
+					$('#calendar').fullCalendar({
+	       				 // put your options and callbacks here
+	       				height: 408,
+	        			weekends: true, // will hide Saturdays and Sundays
+	        			events: event.result
+					})
+				}
+			});
+			
+			$('#dialog2').css("top", 100);
+			$('#dialog2').css("left", 200);
+			WAF.widgets['dialog2'].displayDialog();
+		}
+
+	};// @lock
+
 	dataGrid2.onRowClick = function dataGrid2_onRowClick (event)// @startlock
 	{// @endlock
 		currentPTOPrimaryKey = WAF.sources.pTO_Request.ID;
@@ -804,42 +828,10 @@ function handleEmailMessageDialog() {
 		
 		//$('dd').hide();	
 		
-		$('#calendarButton').on('click', function() {
-			//Calendar
-			if (!(WAF.directory.currentUser() === null)) {
-				if (buildCalendar) {
-					//$('#calendar').fullCalendar('removeEvents');
-					waf.ds.RequestLineItem.getCalendarArray({
-						onSuccess: function(event) {
-							$('#calendar').fullCalendar({
-			       				 // put your options and callbacks here
-			       				height: 408,
-			        			weekends: true, // will hide Saturdays and Sundays
-			        			events: event.result
-							})
-						}
-					});
-					
-					buildCalendar = false;
-				} 
-			}
-			
-			if (displayCalendarDialog) {
-				$('#dialog2').css("top", 100);
-				$('#dialog2').css("left", 200);
-				WAF.widgets['dialog2'].displayDialog();
-				displayCalendarDialog = false;
-			} else {
-				WAF.widgets['dialog2'].closeDialog();
-				displayCalendarDialog = true;
-			}
-		});//end calendarButton event handler
-		
-		
-		
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("calendarButton", "click", calendarButton.click, "WAF");
 	WAF.addListener("dataGrid2", "onRowClick", dataGrid2.onRowClick, "WAF");
 	WAF.addListener("button12", "click", button12.click, "WAF");
 	WAF.addListener("button5", "click", button5.click, "WAF");
