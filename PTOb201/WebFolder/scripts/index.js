@@ -39,15 +39,18 @@ var myCurrentDate = mm+'/'+dd+'/'+yyyy;
 
 function setMessageValue(message, error) {
 	if (arguments.length === 0) {
-		$$('messagesRichText').setTextColor("#153E7E");
+		//$$('messagesRichText').setTextColor("#153E7E");
+		$$('messagesRichText').setTextColor("green");
 		message = "";
 	} else if (arguments.length === 1) {
-		$$('messagesRichText').setTextColor("#153E7E");
+		//$$('messagesRichText').setTextColor("#153E7E");
+		$$('messagesRichText').setTextColor("green");
 	} else if (arguments.length === 2) {
 		$$('messagesRichText').setTextColor("red");
 		//$('#messagesRichText').css("color", "red");
 	} else {
-		$$('messagesRichText').setTextColor("#153E7E");
+		//$$('messagesRichText').setTextColor("#153E7E");
+		$$('messagesRichText').setTextColor("green");
 	}
 	
 	$$('messagesRichText').setValue(message);
