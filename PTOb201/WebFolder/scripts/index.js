@@ -491,8 +491,6 @@ function handleEmailMessageDialog() {
 		$$('confirmRichText').setValue("");
 		$$('confirmationDialog').closeDialog(); //ok button
 		
-		
-		
 		waf.sources.pTO_Request.removeCurrent({
 			onSuccess: function(event) {
 				
@@ -513,7 +511,8 @@ function handleEmailMessageDialog() {
 	button2.click = function button2_click (event)// @startlock
 	{// @endlock
 		//Delete PTO Request
-		if (waf.sources.pTO_Request.status === "pending") {
+		//if (waf.sources.pTO_Request.status === "pending") {
+		if (waf.sources.pTO_Request.ID !== null) {
 			$$('confirmRichText').setValue("Delete PTO Request " + waf.sources.pTO_Request.ID + "?");
 			$('#confirmationDialog').css("top", 285);
 			$('#confirmationDialog').css("left", 400);

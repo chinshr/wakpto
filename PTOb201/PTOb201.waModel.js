@@ -324,10 +324,30 @@ guidedModel =// @startlock
 		{
 			onRemove:function()
 			{// @endlock
-				//Remove a PTO Request.
+				var ptoRequest = this;
+				var myCurrentUser = currentUser(); // Get the current user
+				var sessionRef = currentSession(); // Get session.
+				var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity
+				if (myUser !== null) {
+					//Remove a PTO Request.
+					if (currentSession().belongsTo("Payroll") || currentSession().belongsTo("Manager") || currentSession().belongsTo("Administrator")) {
+						if (ptoRequest.requestor.ID !== myUser.ID) {
+							return {error: 2060, errorMessage: "Delete request rejected on the server. Only the requestor can remove a PTO."};
+						}
+					
+					} else {
+						//requestor is trying to remove PTO request.
+						if (this.status !== "pending") {
+							return {error: 2020, errorMessage: "Delete request rejected on the server. Only pending requests can be removed."};
+						} else {
+							return {error: 2030, errorMessage: "Delete request rejected on the server. Just for now..."};
+						}
+					}
 				
+				} else {
+					return {error: 2040, errorMessage: "Delete request rejected on the server. User record could not be loaded."};
+				}
 				
-				return {error: 2000, errorMessage: "Delete request rejected on the server."};
 			},// @startlock
 			onRestrictingQuery:function()
 			{// @endlock
