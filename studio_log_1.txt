@@ -7737,3 +7737,159 @@
 2012-08-23 14:41:42 [JSDEBUGGER] INFO - WARNING : path undefined
 2012-08-23 14:41:46 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,resume,event internally:,[object Object],(request_seq: undefined)
 2012-08-23 14:41:46 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,resume,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - WARNING : undefined> getStacks() should be named getStack()
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - WARNING : undefined> getStacks() should be named getStack()
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> setReady from crossfireClient_ontemplatesloaded
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> setReady from crossfireClient_ontemplatesloaded
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,break,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - WARNING : Right> Received a "break" event without "contextcreated" event,4767013456
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,contextcreated,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : calling getstack from the context,Context{id: "4767013456stackSize: 0", }
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - WARNING : context doesn't exist anymore,[object Object]
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,contextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,break,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - WARNING : Bottom> Received a "break" event without "contextcreated" event,4767013456
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextcreated,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,currentcontextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,currentcontextchange,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,ready,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,ready,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> getBreakpoints from crossfireClient_onready_breakpointListener,[object Object]
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,breakpointsloaded,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,breakpointsloaded,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - WARNING : Breakpoints: Scope unknown: ,[object Object]
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,stacksloaded,event internally:,[object Object],(request_seq: 1)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,stackready,event internally:,[object Object],(request_seq: 1)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,stacksloaded,event internally:,[object Object],(request_seq: 1)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,stackready,event internally:,[object Object],(request_seq: 100001)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,1,100001
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,contextslisted,event internally:,[object Object],(request_seq: 3)
+2012-08-30 14:17:57 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,contextslisted,event internally:,[object Object],(request_seq: 3)
+2012-08-30 14:17:59 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100001)
+2012-08-30 14:17:59 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:17:59 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100001)
+2012-08-30 14:17:59 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:17:59 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:17:59 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:17:59 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:00 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,resume,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:18:00 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,resume,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,break,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : calling getstack from the context,Context{id: "4767013456stackSize: 0", is current}
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,break,event internally:,[object Object],(request_seq: undefined)
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,stacksloaded,event internally:,[object Object],(request_seq: 8)
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,stackready,event internally:,[object Object],(request_seq: 2)
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,stacksloaded,event internally:,[object Object],(request_seq: 8)
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,stackready,event internally:,[object Object],(request_seq: 100003)
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,140,100003
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100003)
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100003)
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:01 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:06 [JSDEBUGGER] INFO - LOG : Right> evaluate ,4767013456,0,(mail),100004
+2012-08-30 14:18:06 [JSDEBUGGER] INFO - LOG : Right> evaluate ,4767013456,0,(mail),100005
+2012-08-30 14:18:06 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,evaluated,event internally:,[object Object],(request_seq: 100004)
+2012-08-30 14:18:06 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,evaluated,event internally:,[object Object],(request_seq: 100004)
+2012-08-30 14:18:06 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,evaluated,event internally:,[object Object],(request_seq: 100005)
+2012-08-30 14:18:06 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,evaluated,event internally:,[object Object],(request_seq: 100005)
+2012-08-30 14:18:08 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,329,100006
+2012-08-30 14:18:08 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100006)
+2012-08-30 14:18:08 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:08 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100006)
+2012-08-30 14:18:08 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,332,100007
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100007)
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100007)
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:14 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:22 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,335,100008
+2012-08-30 14:18:22 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100008)
+2012-08-30 14:18:22 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:22 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100008)
+2012-08-30 14:18:22 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,337,100009
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100009)
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100009)
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:23 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:30 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,339,100010
+2012-08-30 14:18:30 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100010)
+2012-08-30 14:18:30 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:30 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100010)
+2012-08-30 14:18:30 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,341,100011
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100011)
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100011)
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:32 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:36 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,343,100012
+2012-08-30 14:18:36 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100012)
+2012-08-30 14:18:36 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:36 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100012)
+2012-08-30 14:18:36 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:38 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,333,100013
+2012-08-30 14:18:38 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100013)
+2012-08-30 14:18:38 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:38 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100013)
+2012-08-30 14:18:38 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:38 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:38 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:38 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:38 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:41 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,347,100014
+2012-08-30 14:18:41 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100014)
+2012-08-30 14:18:41 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:41 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100014)
+2012-08-30 14:18:41 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:44 [JSDEBUGGER] INFO - LOG : Right> getObjectProperties ,4767013456,0,349,100015
+2012-08-30 14:18:45 [JSDEBUGGER] INFO - LOG : Bottom> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100015)
+2012-08-30 14:18:45 [JSDEBUGGER] INFO - LOG : Bottom> Frame_onobjectpropertiesreceived: undefined,[object Object]
+2012-08-30 14:18:45 [JSDEBUGGER] INFO - LOG : Right> Dispatch received ,objectpropertiesreceived,event internally:,[object Object],(request_seq: 100015)
+2012-08-30 14:18:45 [JSDEBUGGER] INFO - LOG : Right> Frame_onobjectpropertiesreceived: [object Object],[object Object]
+2012-08-30 14:18:45 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:45 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:45 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:18:45 [JSDEBUGGER] INFO - WARNING : path undefined
+2012-08-30 14:19:00 [JSDEBUGGER] INFO - WARNING : Right> crossfireClient_watchers_toggle_objNode -> $row.$children undefined
+2012-08-30 14:19:00 [JSDEBUGGER] INFO - WARNING : Right> crossfireClient_watchers_toggle_objNode -> $row.$rows undefined
+2012-08-30 14:19:03 [JSDEBUGGER] INFO - WARNING : Right> crossfireClient_watchers_toggle_objNode -> $row.$children undefined
+2012-08-30 14:19:03 [JSDEBUGGER] INFO - WARNING : Right> crossfireClient_watchers_toggle_objNode -> $row.$rows undefined

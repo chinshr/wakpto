@@ -758,12 +758,12 @@ function handleEmailMessageDialog() {
 			WAF.sources.pTO_Request.setEntityCollection();
 			WAF.sources.pTO_Request1.setEntityCollection();
 			$$("richText2").setValue("");
-			$$("container1").hide();
+			//$$("container1").hide();
 			$("#container7").css("top", "80px");
 			$("#container7").css("left", "0px");
 			$$("container7").show();
 			$$("signInContainer").show();
-			$$("signOutContainer").hide();
+			//$$("signOutContainer").hide();
 			$('#calendarButton').hide();
 		} else {
 			//We have a user signed in.
@@ -831,6 +831,14 @@ function handleEmailMessageDialog() {
 		
 		//$('dd').hide();	
 		
+		//fix for combobox render bug where button get shoved
+		// to the next line because input element grows by 2 px.
+		var inputWidth = $('#combobox2 input').css('width');
+		$('#combobox2 input').css('width', "-=2");
+		var inputWidth = $('#combobox1 input').css('width');
+		$('#combobox1 input').css('width', "-=2");
+		
+	
 	};// @lock
 
 // @region eventManager// @startlock
