@@ -2,6 +2,9 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var button16 = {};	// @button
+	var button15 = {};	// @button
+	var button2 = {};	// @button
 	var calendarButton = {};	// @button
 	var dataGrid2 = {};	// @dataGrid
 	var button12 = {};	// @button
@@ -28,6 +31,7 @@ var buildCalendar = true,
 	currentUserIsManagement = false,
 	currentUserIsEmployee = false,
 	buildCalendar = true,
+	currentPTO,
 	today = new Date(),
 	currentPTOPrimaryKey = -1,
 	dd = today.getDate(),
@@ -482,6 +486,43 @@ function handleEmailMessageDialog() {
 
 // eventHandlers// @lock
 
+	button16.click = function button16_click (event)// @startlock
+	{// @endlock
+		$$('confirmRichText').setValue("");
+		$$('confirmationDialog').closeDialog(); //ok button
+		
+		
+		
+		waf.sources.pTO_Request.removeCurrent({
+			onSuccess: function(event) {
+				
+			},
+			onError: function(error) {
+				setMessageValue(error['error'][0].message + " (" + error['error'][0].errCode + ")", true);
+			}
+		});
+		
+	};// @lock
+
+	button15.click = function button15_click (event)// @startlock
+	{// @endlock
+		$$('confirmRichText').setValue("");
+		$$('confirmationDialog').closeDialog(); //cancel button
+	};// @lock
+
+	button2.click = function button2_click (event)// @startlock
+	{// @endlock
+		//Delete PTO Request
+		if (waf.sources.pTO_Request.status === "pending") {
+			$$('confirmRichText').setValue("Delete PTO Request " + waf.sources.pTO_Request.ID + "?");
+			$('#confirmationDialog').css("top", 285);
+			$('#confirmationDialog').css("left", 400);
+			WAF.widgets['confirmationDialog'].displayDialog();
+		} else {
+			setMessageValue("You must select a pending PTO request first.");
+		}
+	};// @lock
+
 	calendarButton.click = function calendarButton_click (event)// @startlock
 	{// @endlock
 		//Calendar
@@ -842,6 +883,9 @@ function handleEmailMessageDialog() {
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("button16", "click", button16.click, "WAF");
+	WAF.addListener("button15", "click", button15.click, "WAF");
+	WAF.addListener("button2", "click", button2.click, "WAF");
 	WAF.addListener("calendarButton", "click", calendarButton.click, "WAF");
 	WAF.addListener("dataGrid2", "onRowClick", dataGrid2.onRowClick, "WAF");
 	WAF.addListener("button12", "click", button12.click, "WAF");

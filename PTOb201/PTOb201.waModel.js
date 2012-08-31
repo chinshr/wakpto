@@ -322,6 +322,13 @@ guidedModel =// @startlock
 		},
 		events :
 		{
+			onRemove:function()
+			{// @endlock
+				//Remove a PTO Request.
+				
+				
+				return {error: 2000, errorMessage: "Delete request rejected on the server."};
+			},// @startlock
 			onRestrictingQuery:function()
 			{// @endlock
 				var myCurrentUser = currentUser(); // Get the current user
