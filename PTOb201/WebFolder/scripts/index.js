@@ -526,7 +526,8 @@ function handleEmailMessageDialog() {
 	{// @endlock
 		//Calendar
 		if (!(WAF.directory.currentUser() === null)) {
-			$('#calendar').fullCalendar('removeEvents');
+			//$('#calendar').fullCalendar('removeEvents');
+			$('#calendar').fullCalendar('destroy');
 			waf.ds.RequestLineItem.getCalendarArray({
 				onSuccess: function(event) {
 					$('#calendar').fullCalendar({

@@ -15,7 +15,7 @@ guidedModel =// @startlock
 				eventArray.push({title  : 'Tim Penner : Floating Day', start  : '2012-08-02'});
 				eventArray.push({title  : 'Josh Fletcher : Paid Time Off : 4hrs', start  : '2012-09-05'});
 				*/
-				
+				var managerName;
 				var sessionRef = currentSession(); // Get session.
 				var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.	
 				//if (loginByPassword("admin", "admin")) {	
@@ -31,6 +31,52 @@ guidedModel =// @startlock
 								if (lineItem.compensation === "Paid Time Off") {
 									eventObj.title += " : " + lineItem.hoursRequested;
 								}
+								
+								//get Manager
+								managerName = lineItem.ptoRequest.requestor.myManager.fullName;
+								myName = lineItem.ptoRequest.requestor.fullName;
+								
+								switch(managerName) {
+									case "Tom Miller":
+										if (myName === "Tracy Roberts") {
+											eventObj.backgroundColor = "#B4ACE6";
+											eventObj.borderColor = "#999999";
+											eventObj.textColor = "#333333";
+										} else if (myName === "Add Komoncharoensiri")  {
+											eventObj.backgroundColor = "#3CBC71";
+											eventObj.borderColor = "#999999";
+											eventObj.textColor = "#333333";
+										} else {
+											eventObj.backgroundColor = "#B0C4DE";
+											eventObj.borderColor = "#999999";
+											eventObj.textColor = "#333333";
+										}
+									break;
+									
+									case "Michel Gerin":
+									eventObj.backgroundColor = "#F0F080";
+									eventObj.borderColor = "#999999";
+									eventObj.textColor = "#333333";
+									break;
+									
+									case "Add Komoncharoensiri":
+									eventObj.backgroundColor = "#3CBC71";
+									eventObj.borderColor = "#999999";
+									eventObj.textColor = "#333333";
+									break;
+									
+									case "Tracy Roberts":
+									eventObj.backgroundColor = "#B4ACE6";
+									eventObj.borderColor = "#999999";
+									eventObj.textColor = "#333333";
+									break;
+									
+									default:
+									eventObj.backgroundColor = "#B0C4DE";
+									eventObj.borderColor = "#999999";
+									eventObj.textColor = "#333333";
+								}
+
 								eventObj.start = formatDateForCalendar(lineItem.dateRequested);
 								eventArray.push(eventObj);
 							}
