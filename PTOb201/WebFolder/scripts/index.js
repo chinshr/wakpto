@@ -81,13 +81,18 @@ function savePTORequest(message) {
 				"status !== :1 order by firstDayOff", "closed",
 				{
 				onSuccess: function (event) {
-					WAF.sources.pTO_Request.selectByKey(primKey, {
-						onSuccess: function(event) {
-							currentPTOPrimaryKey = primKey;
-							createEmailAccordian();
-							disableInput();
-						}
-					});
+					WAF.sources.pTO_Request.selectByKey(primKey);
+					currentPTOPrimaryKey = primKey;
+					createEmailAccordian();
+					disableInput();
+					
+//					WAF.sources.pTO_Request.selectByKey(primKey, {
+//						onSuccess: function(event) {
+//							currentPTOPrimaryKey = primKey;
+//							createEmailAccordian();
+//							disableInput();
+//						}
+//					});
 				}
 			});	
 		},
