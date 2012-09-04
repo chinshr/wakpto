@@ -37,6 +37,22 @@ guidedModel =// @startlock
 								myName = lineItem.ptoRequest.requestor.fullName;
 								
 								switch(managerName) {
+									case "Sandra Michaels":
+									if (myName === "Tom Miller") {
+										eventObj.backgroundColor = "#B0C4DE";
+										eventObj.borderColor = "#999999";
+										eventObj.textColor = "#333333";
+									} else if (myName === "Michel Gerin")  {
+										eventObj.backgroundColor = "#F0F080";
+										eventObj.borderColor = "#999999";
+										eventObj.textColor = "#333333";
+									} else {
+										eventObj.backgroundColor = "#B0C4DE";
+										eventObj.borderColor = "#999999";
+										eventObj.textColor = "#333333";
+									}	
+									break;
+									
 									case "Tom Miller":
 										if (myName === "Tracy Roberts") {
 											eventObj.backgroundColor = "#B4ACE6";
@@ -374,26 +390,29 @@ guidedModel =// @startlock
 				var myCurrentUser = currentUser(); // Get the current user
 				var sessionRef = currentSession(); // Get session.
 				var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity
-				if (myUser !== null) {
-					//Remove a PTO Request.
-					if (currentSession().belongsTo("Payroll") || currentSession().belongsTo("Manager") || currentSession().belongsTo("Administrator")) {
-						if (ptoRequest.requestor.ID !== myUser.ID) {
-							return {error: 2060, errorMessage: "Delete request rejected on the server. Only the requestor can remove a PTO."};
+				
+				
+				if (!(sessionRef.belongsTo("Administrator"))) {
+					if (myUser !== null) {
+						//Remove a PTO Request.
+						if (currentSession().belongsTo("Payroll") || currentSession().belongsTo("Manager") || currentSession().belongsTo("Administrator")) {
+							if (ptoRequest.requestor.ID !== myUser.ID) {
+								return {error: 2060, errorMessage: "Delete request rejected on the server. Only the requestor can remove a PTO."};
+							}
+						
+						} else {
+							//requestor is trying to remove PTO request.
+							if (this.status !== "pending") {
+								return {error: 2020, errorMessage: "Delete request rejected on the server. Only pending requests can be removed."};
+							} else {
+								return {error: 2030, errorMessage: "Delete request rejected on the server. Just for now..."};
+							}
 						}
 					
 					} else {
-						//requestor is trying to remove PTO request.
-						if (this.status !== "pending") {
-							return {error: 2020, errorMessage: "Delete request rejected on the server. Only pending requests can be removed."};
-						} else {
-							return {error: 2030, errorMessage: "Delete request rejected on the server. Just for now..."};
-						}
+						return {error: 2040, errorMessage: "Delete request rejected on the server. User record could not be loaded."};
 					}
-				
-				} else {
-					return {error: 2040, errorMessage: "Delete request rejected on the server. User record could not be loaded."};
-				}
-				
+				} //(!(sessionRef.belongsTo("Administrator"))) 
 			},// @startlock
 			onRestrictingQuery:function()
 			{// @endlock
@@ -499,6 +518,8 @@ guidedModel =// @startlock
 								notes: this.emailText
 								//requestLineItems: [{name: "dave"}, {name: "tom"}, {name: "bill"}]
 						});
+						
+						thePort.postMessage({what: 'htmlEmailTest'});
 						
 						new ds.Note({ 
 							date: new Date(),

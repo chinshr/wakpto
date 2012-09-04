@@ -20,11 +20,12 @@ if (loginByPassword("admin", "admin")) {
 		/**/
 		userCollection.remove();
 		
+		var payrollManager = new ds.User({login: "smichaels", password: "michaels", fullName: "Sandra Michaels", email: "dave@wakanda.org", role: "Payroll", myManager: generalManager, accessLevel: 5, ptoHours: 120, floatingDays: 5, ptoSeedDate: new Date()});
+		payrollManager.save();
+
 		var generalManager = new ds.User({login: "tmiller", password: "miller", fullName: "Tom Miller", email: "dave@wakanda.org", role: "Manager", myManager: payrollManager, accessLevel: 3, ptoHours: 120, floatingDays: 5, ptoSeedDate: new Date()});
 		generalManager.save();
 		
-		var payrollManager = new ds.User({login: "smichaels", password: "michaels", fullName: "Sandra Michaels", email: "dave@wakanda.org", role: "Payroll", myManager: generalManager, accessLevel: 5, ptoHours: 120, floatingDays: 5, ptoSeedDate: new Date()});
-		payrollManager.save();
 		
 		var salesManager = new ds.User({login: "troberts", password: "roberts", fullName: "Tracy Roberts", email: "dave@wakanda.org", role: "Manager", myManager: generalManager, accessLevel: 5, ptoHours: 120, floatingDays: 5, ptoSeedDate: new Date()});
 		salesManager.save();
