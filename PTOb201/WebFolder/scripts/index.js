@@ -2,6 +2,8 @@
 WAF.onAfterInit = function onAfterInit() {// @lock
 
 // @region namespaceDeclaration// @startlock
+	var menuItem3 = {};	// @menuItem
+	var menuItem4 = {};	// @menuItem
 	var button16 = {};	// @button
 	var button15 = {};	// @button
 	var button2 = {};	// @button
@@ -498,6 +500,20 @@ var myCurrentDate = mm+'/'+dd+'/'+yyyy;
 
 // eventHandlers// @lock
 
+	menuItem3.click = function menuItem3_click (event)// @startlock
+	{// @endlock
+		//Open PTOs
+		$('#container3').animate({ opacity: 1 }, 300);
+		$$("button9").enable();
+	};// @lock
+
+	menuItem4.click = function menuItem4_click (event)// @startlock
+	{// @endlock
+		//Closed PTOs tab
+		$('#container3').animate({ opacity: 0.2 }, 300);
+		$$("button9").disable();
+	};// @lock
+
 	button16.click = function button16_click (event)// @startlock
 	{// @endlock
 		$$('confirmRichText').setValue("");
@@ -921,6 +937,8 @@ var myCurrentDate = mm+'/'+dd+'/'+yyyy;
 	};// @lock
 
 // @region eventManager// @startlock
+	WAF.addListener("menuItem3", "click", menuItem3.click, "WAF");
+	WAF.addListener("menuItem4", "click", menuItem4.click, "WAF");
 	WAF.addListener("button16", "click", button16.click, "WAF");
 	WAF.addListener("button15", "click", button15.click, "WAF");
 	WAF.addListener("button2", "click", button2.click, "WAF");
