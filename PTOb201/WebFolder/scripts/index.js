@@ -80,7 +80,7 @@ var myCurrentDate = mm+'/'+dd+'/'+yyyy;
 					setMessageValue("PTO Request Saved.");
 				}
 				
-				WAF.sources.pTO_Request.addEntity(event.dataSource.getCurrentElement());
+				//WAF.sources.pTO_Request.addEntity(event.dataSource.getCurrentElement());
 				//WAF.sources.pTO_Request.selectByKey(primKey);
 				WAF.sources.pTO_Request.selectByKey(event.dataSource.ID);
 				currentPTOPrimaryKey = primKey;
@@ -691,7 +691,33 @@ var myCurrentDate = mm+'/'+dd+'/'+yyyy;
 		} else {
 			//$$('instuctionsRichText').setValue("Double-click line-items to update PTO request.");
 			//setMessageValue("Double-click line-items to update PTO request.");
-			savePTORequest();
+			//savePTORequest();
+			
+			//We are saving pending request here.
+			WAF.sources.pTO_Request.save({
+				onSuccess: function(event) {
+					updateUserAccountDisplay();
+					if (event.dataSource.status === "requested") {
+						setMessageValue("PTO Request Saved. An email has been sent to your manager.");
+					} else if (event.dataSource.status === "pending") {
+						setMessageValue("PTO Request Saved. Double-click line-items to update PTO request.");
+					} else {
+						setMessageValue("PTO Request Saved.");
+					}
+				
+					WAF.sources.pTO_Request.addEntity(event.dataSource.getCurrentElement());
+					//WAF.sources.pTO_Request.selectByKey(primKey);
+					WAF.sources.pTO_Request.selectByKey(event.dataSource.ID);
+					currentPTOPrimaryKey = event.dataSource.ID;
+					createEmailAccordian();
+					disableInput();
+				},
+				onError: function(error) {
+					setMessageValue(error['error'][0].message + " (" + error['error'][0].errCode + ")", true);
+		           	//Ask Laurent if serverRefresh supports declareDependencies or autoExpand.
+		           	WAF.sources.pTO_Request.serverRefresh({forceReload: true});
+				}
+			});
 		}
 	};// @lock
 
