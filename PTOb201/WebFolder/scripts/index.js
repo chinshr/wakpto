@@ -67,6 +67,7 @@ function savePTORequest(message) {
 	
 	var primKey = WAF.sources.pTO_Request.ID;
 	WAF.sources.pTO_Request.save({
+		//userData: {primaryKey: primKey},
     	onSuccess: function(event) {
 			updateUserAccountDisplay();
 			if (event.dataSource.status === "requested") {
@@ -80,8 +81,10 @@ function savePTORequest(message) {
 			WAF.sources.pTO_Request.query(
 				"status !== :1 order by firstDayOff", "closed",
 				{
+				//userData: {primaryKey: event.userData.primaryKey},
 				onSuccess: function (event) {
 					WAF.sources.pTO_Request.selectByKey(primKey);
+					//WAF.sources.pTO_Request.selectByKey(event.userData.primaryKey);
 					currentPTOPrimaryKey = primKey;
 					createEmailAccordian();
 					disableInput();
