@@ -721,7 +721,10 @@ var myCurrentDate = mm+'/'+dd+'/'+yyyy;
 						setMessageValue("PTO Request Saved.");
 					}
 				
-					WAF.sources.pTO_Request.addEntity(event.dataSource.getCurrentElement());
+					if (waf.sources.pTO_Request.getPosition() === -1) {
+						WAF.sources.pTO_Request.addEntity(event.dataSource.getCurrentElement());
+					}
+					
 					//WAF.sources.pTO_Request.selectByKey(primKey);
 					WAF.sources.pTO_Request.selectByKey(event.dataSource.ID);
 					currentPTOPrimaryKey = event.dataSource.ID;
