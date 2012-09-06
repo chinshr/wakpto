@@ -7,6 +7,8 @@
 //HTTP Request Handler
 //addHttpRequestHandler('/testEcho', 'requestHandlers.js', 'echoHandler');
 //addHttpRequestHandler('/calendarData', 'requestHandlers.js', 'fullCalendarDispatcher');
+addHttpRequestHandler('/ptoApproval', 'requestHandlers.js', 'ptoApproval');
+
 
 directory.setLoginListener("ptoLogin");
 
