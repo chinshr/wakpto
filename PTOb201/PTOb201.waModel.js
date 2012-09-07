@@ -120,9 +120,11 @@ guidedModel =// @startlock
 				var myCurrentUser = currentUser(); // Get the current user.
 				var myUserV = ds.User.find("ID = :1", myCurrentUser.ID);
 				
-				if (sessionRef.belongsTo("Administrator")) {
-					//err = { error : 5099, errorMessage: "The Administrator is not allowed to remove PTO Request Line Items."};
-					//return err;
+				if (sessionRef.belongsTo("Internal")) { 
+					//Ok to remove.
+				} else if (sessionRef.belongsTo("Administrator")) {
+					err = { error : 5099, errorMessage: "The Administrator is not allowed to remove PTO Request Line Items."};
+					return err;
 				
 				} else if (sessionRef.belongsTo("Manager") && (this.ptoRequest.requestor.login !== myCurrentUser.name)) {	
 					err = { error : 5095, errorMessage: "A Manager is only allowed to remove their own PTO Request Line Items."};
@@ -392,10 +394,13 @@ guidedModel =// @startlock
 				var myUser = ds.User.find("ID = :1", myCurrentUser.ID); // Load their user entity
 				
 				
-				if (!(sessionRef.belongsTo("Administrator"))) {
+				if (sessionRef.belongsTo("Administrator")) {
+					return {error: 2055, errorMessage: "Delete request rejected on the server. Only the requestor can remove a PTO."};
+				
+				} else {
 					if (myUser !== null) {
 						//Remove a PTO Request.
-						if (currentSession().belongsTo("Payroll") || currentSession().belongsTo("Manager") || currentSession().belongsTo("Administrator")) {
+						if (currentSession().belongsTo("Payroll") || currentSession().belongsTo("Manager")) {
 							if (ptoRequest.requestor.ID !== myUser.ID) {
 								return {error: 2060, errorMessage: "Delete request rejected on the server. Only the requestor can remove a PTO."};
 							}
@@ -405,14 +410,22 @@ guidedModel =// @startlock
 							if (this.status !== "pending") {
 								return {error: 2020, errorMessage: "Delete request rejected on the server. Only pending requests can be removed."};
 							} else {
-								return {error: 2030, errorMessage: "Delete request rejected on the server. Just for now..."};
+								//Ok. It is the owners request and it's pending. Go ahead and remove the PTO and all line items and notes.
+								var sessionRef = currentSession(); // Get session.
+								var promoteToken = sessionRef.promoteWith("Internal"); //temporarily make this session Admin level.
+								var lineItems = this.requestLineItemCollection;
+								lineItems.remove();
+								var notes = this.noteCollection;
+								notes.remove();
+								this.remove;
+								sessionRef.unPromote(promoteToken); //put the session back to normal.	
 							}
 						}
 					
 					} else {
 						return {error: 2040, errorMessage: "Delete request rejected on the server. User record could not be loaded."};
 					}
-				} //(!(sessionRef.belongsTo("Administrator"))) 
+				} //(sessionRef.belongsTo("Administrator")) 
 			},// @startlock
 			onRestrictingQuery:function()
 			{// @endlock

@@ -521,7 +521,7 @@ var myCurrentDate = mm+'/'+dd+'/'+yyyy;
 		
 		waf.sources.pTO_Request.removeCurrent({
 			onSuccess: function(event) {
-				
+				setMessageValue("Your PTO request has been deleted.");
 			},
 			onError: function(error) {
 				setMessageValue(error['error'][0].message + " (" + error['error'][0].errCode + ")", true);
@@ -813,7 +813,7 @@ var myCurrentDate = mm+'/'+dd+'/'+yyyy;
 
 	button22.click = function button22_click (event)// @startlock
 	{// @endlock
-		$$('dialog3').sialog(); //cancel button
+		$$('dialog3').closeDialog(); //cancel button
 	};// @lock
 
 	button21.click = function button21_click (event)// @startlock
