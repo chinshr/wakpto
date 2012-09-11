@@ -434,7 +434,7 @@ guidedModel =// @startlock
 				var result = ds.PTO_Request.createEntityCollection();
 				/**/
 				//if (currentUser().name === "admin") {
-				if (currentSession().belongsTo("Administrator")) {
+				if (currentSession().belongsTo("Administrator") || currentSession().belongsTo("Payroll")) {
 					result = ds.PTO_Request.all();
 				
 				} else {
@@ -447,7 +447,7 @@ guidedModel =// @startlock
 					
 					if (myUser !== null) {
 						//if (myUser.accessLevel < 4) {
-						if (myUser.role === "Manager" || myUser.role === "Payroll") {
+						if (myUser.role === "Manager") {
 							result = ds.PTO_Request.query("requestor.myManager.login = :1 and status !== :2", myCurrentUser.name, "pending");
 							theManagerPTOs = ds.PTO_Request.query("requestor.login = :1", currentUser().name);
 							result = result.add(theManagerPTOs);
@@ -928,11 +928,17 @@ guidedModel =// @startlock
 		},
 		events :
 		{
+			onInit:function()
+			{// @endlock
+				// User init
+				this.role = "Employee";
+				this.classification = "Full-Time";
+			},// @startlock
 			onRestrictingQuery:function()
 			{// @endlock
 				var result = ds.User.createEntityCollection();
 				
-				if (currentSession().belongsTo("Administrator")) {
+				if (currentSession().belongsTo("Administrator") || currentSession().belongsTo("Payroll")) {
 					result = ds.User.all();
 				
 				} else if (currentSession().belongsTo("Manager")) {

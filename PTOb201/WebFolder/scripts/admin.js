@@ -181,6 +181,11 @@ function signIn() {
 	documentEvent.onLoad = function documentEvent_onLoad (event)// @startlock
 	{// @endlock
 		
+		classificationArray = [];
+		classificationArray.push({title: 'Full-Time'});
+		classificationArray.push({title: 'Part-Time'});
+		WAF.sources.classificationArray.sync();
+		
 		roleArray = [];
 		roleArray.push({title: 'Employee'});
 		roleArray.push({title: 'Manager'});
