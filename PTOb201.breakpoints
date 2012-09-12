@@ -1,1 +1,1 @@
-﻿<?xml version="1.0" encoding="UTF-8"?><breakpoints/>
+﻿<?xml version="1.0" encoding="UTF-8"?><breakpoints><breakpoint path="./required.js" line="5" content=" var promoteToken = sessionRef.promoteWith(&quot;Administrator&quot;); //temporarily make this session Admin level."/></breakpoints>

@@ -4,6 +4,8 @@ function ptoLogin(userName, password) {
 	var sessionRef = currentSession(); // Get session.
 	var promoteToken = sessionRef.promoteWith("Administrator"); //temporarily make this session Admin level.
 	
+	debugger
+	
 	var myUser = ds.User({login:userName});
 	if (myUser === null) {
 		return false;
